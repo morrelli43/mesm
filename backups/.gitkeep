@@ -1,0 +1,9 @@
+# This directory stores database backups
+# Created automatically by deployment scripts
+
+# Example backup files:
+# 20231201_143022_production.sql
+# 20231201_150000_staging.sql  
+# 20231201_160000_development.sql
+
+*.sql

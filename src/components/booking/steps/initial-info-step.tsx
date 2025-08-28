@@ -7,7 +7,7 @@ interface InitialInfoStepProps {
     email: string;
     phone: string;
   };
-  updateFormData: (updates: any) => void;
+  updateFormData: (updates: Partial<{ name: string; email: string; phone: string }>) => void;
 }
 
 export function InitialInfoStep({ formData, updateFormData }: InitialInfoStepProps) {

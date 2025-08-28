@@ -8,7 +8,7 @@ interface PaymentStepProps {
     serviceType: "in-store" | "mobile";
     address?: string;
   };
-  updateFormData: (updates: any) => void;
+  updateFormData: (updates: Partial<{ serviceType: "in-store" | "mobile"; address?: string }>) => void;
 }
 
 export function PaymentStep({ formData }: PaymentStepProps) {

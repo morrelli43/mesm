@@ -17,7 +17,7 @@ interface ConfirmationStepProps {
     preferredTime: string;
     createAccount: boolean;
   };
-  updateFormData: (updates: any) => void;
+  updateFormData: (updates: Partial<{ createAccount: boolean }>) => void;
   onEdit: (step: number) => void;
 }
 
@@ -130,7 +130,7 @@ export function ConfirmationStep({ formData, updateFormData, onEdit }: Confirmat
           {formData.createAccount && (
             <div className="p-4 bg-green-50 rounded-lg border border-green-200">
               <p className="text-sm text-green-800">
-                ✅ Great! We'll create an account for you using your email address. You'll receive login details after your booking is confirmed.
+                ✅ Great! We&apos;ll create an account for you using your email address. You&apos;ll receive login details after your booking is confirmed.
               </p>
             </div>
           )}

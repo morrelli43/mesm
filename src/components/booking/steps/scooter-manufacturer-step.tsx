@@ -4,7 +4,7 @@ interface ScooterManufacturerStepProps {
   formData: {
     manufacturer: string;
   };
-  updateFormData: (updates: any) => void;
+  updateFormData: (updates: Partial<{ manufacturer: string; model: string }>) => void;
 }
 
 // Common scooter manufacturers
@@ -54,7 +54,7 @@ export function ScooterManufacturerStep({ formData, updateFormData }: ScooterMan
           className="w-full max-w-md"
           onClick={() => handleManufacturerSelect("unknown")}
         >
-          I don't know my scooter brand
+          I don&apos;t know my scooter brand
         </Button>
       </div>
       

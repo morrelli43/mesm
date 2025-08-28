@@ -13,7 +13,14 @@ interface ServiceRequirementsStepProps {
     preferredDate: string;
     preferredTime: string;
   };
-  updateFormData: (updates: any) => void;
+  updateFormData: (updates: Partial<{
+    issueType: string;
+    customDescription: string;
+    serviceType: "in-store" | "mobile";
+    address?: string;
+    preferredDate: string;
+    preferredTime: string;
+  }>) => void;
 }
 
 const commonIssues = [

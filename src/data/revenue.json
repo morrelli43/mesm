@@ -1,0 +1,14 @@
+[
+  {"month": "Jan", "total": 4250},
+  {"month": "Feb", "total": 3800},
+  {"month": "Mar", "total": 4100},
+  {"month": "Apr", "total": 3500},
+  {"month": "May", "total": 4750},
+  {"month": "Jun", "total": 3900},
+  {"month": "Jul", "total": 4200},
+  {"month": "Aug", "total": 3950},
+  {"month": "Sep", "total": 4400},
+  {"month": "Oct", "total": 4650},
+  {"month": "Nov", "total": 4300},
+  {"month": "Dec", "total": 5100}
+]

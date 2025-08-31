@@ -20,7 +20,7 @@ export function Hero({ title, subtitle }: HeroProps) {
         </div>
         <div className="mt-8">
           <Button size="lg" asChild>
-            <Link href="/book-a-service">Book a Service</Link>
+            <Link href="/book-a-service">👉 Book Your Repair Now</Link>
           </Button>
         </div>
       </div>

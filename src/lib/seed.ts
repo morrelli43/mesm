@@ -52,6 +52,23 @@ async function seed() {
       // Mobile Services Page
       { page: 'mobile-services', section: 'title', content: 'Mobile Services' },
       { page: 'mobile-services', section: 'content', content: 'They will be an overview of the mobile services, where the service areas are, the differences in callout charges.' },
+      // Services Page
+      { page: 'services', section: 'title', content: 'Our Services' },
+      { page: 'services', section: 'subtitle', content: 'At Melbourne eScooter Mechanics, we handle everything from quick fixes to complex electrical repairs. Our goal is to get you back riding safely and as quickly as possible.' },
+      { page: 'services', section: 'services_title', content: 'Common Repairs We Handle:' },
+      { page: 'services', section: 'service_1_title', content: 'Tyre Punctures & Replacements' },
+      { page: 'services', section: 'service_1_content', content: 'Flat tyres are the most common e-scooter issue. We can replace or repair them while you wait.' },
+      { page: 'services', section: 'service_2_title', content: 'Scooters Not Turning On' },
+      { page: 'services', section: 'service_2_content', content: 'Electrical issues can be frustrating — we diagnose the fault and get your scooter running again.' },
+      { page: 'services', section: 'service_3_title', content: 'Battery Repairs & Balancing' },
+      { page: 'services', section: 'service_3_content', content: 'We\'re one of the few local mechanics who can repair out-of-balance batteries and extend their life.' },
+      { page: 'services', section: 'service_4_title', content: 'Crash & Accident Damage' },
+      { page: 'services', section: 'service_4_content', content: 'From broken frames to bent parts, we can assess the damage and get your scooter back in shape.' },
+      { page: 'services', section: 'service_5_title', content: 'General Maintenance & Safety Checks' },
+      { page: 'services', section: 'service_5_content', content: 'Brakes, lights, steering, and more — we\'ll make sure everything is in safe working order.' },
+      { page: 'services', section: 'service_6_title', content: 'Diagnostics' },
+      { page: 'services', section: 'service_6_content', content: 'Not sure what\'s wrong? We provide full diagnostic testing for $70, giving you answers and a clear repair path.' },
+      { page: 'services', section: 'cta_text', content: '👉 Book Your Repair Now – it only takes 90 seconds.' },
     ])
     .execute();
   

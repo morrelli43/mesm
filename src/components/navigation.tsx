@@ -1,13 +1,14 @@
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export function Navigation() {
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center">
-      <Link className="flex items-center justify-center" href="#">
+      <Link className="flex items-center justify-center" href="/">
         <MountainIcon className="h-6 w-6" />
         <span className="sr-only">Melbourne eScooter Mechanics</span>
       </Link>
-      <nav className="ml-auto flex gap-4 sm:gap-6">
+      <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/about"
@@ -22,22 +23,20 @@ export function Navigation() {
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
-          href="/book-a-service"
-        >
-          Book a Service
-        </Link>
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4"
           href="/mobile-services"
         >
           Mobile Services
         </Link>
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4"
-          href="/contact"
-        >
-          Contact Us
-        </Link>
+        <Button variant="outline" asChild>
+          <Link href="/contact">
+            Contact Us
+          </Link>
+        </Button>
+        <Button asChild>
+          <Link href="/book-a-service">
+            Book a Service
+          </Link>
+        </Button>
       </nav>
     </header>
   );

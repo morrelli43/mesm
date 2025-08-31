@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export function Navigation() {
   return (
@@ -20,12 +21,11 @@ export function Navigation() {
         >
           For Sale
         </Link>
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4"
-          href="/book-a-service"
-        >
-          Book a Service
-        </Link>
+        <Button asChild>
+          <Link href="/book-a-service">
+            Book a Service
+          </Link>
+        </Button>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/mobile-services"

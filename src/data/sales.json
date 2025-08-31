@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "name": "Olivia Martin",
+    "email": "olivia.martin@email.com",
+    "avatarUrl": "/avatars/01.png",
+    "initials": "OM",
+    "amount": 1999.00,
+    "createdAt": "2024-12-15T10:30:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Jackson Lee",
+    "email": "jackson.lee@email.com",
+    "avatarUrl": "/avatars/02.png",
+    "initials": "JL",
+    "amount": 39.00,
+    "createdAt": "2024-12-15T09:15:00Z"
+  },
+  {
+    "id": "3",
+    "name": "Isabella Nguyen",
+    "email": "isabella.nguyen@email.com",
+    "avatarUrl": "/avatars/03.png",
+    "initials": "IN",
+    "amount": 299.00,
+    "createdAt": "2024-12-15T08:45:00Z"
+  },
+  {
+    "id": "4",
+    "name": "William Kim",
+    "email": "will@email.com",
+    "avatarUrl": "/avatars/04.png",
+    "initials": "WK",
+    "amount": 99.00,
+    "createdAt": "2024-12-15T08:00:00Z"
+  },
+  {
+    "id": "5",
+    "name": "Sofia Davis",
+    "email": "sofia.davis@email.com",
+    "avatarUrl": "/avatars/05.png",
+    "initials": "SD",
+    "amount": 39.00,
+    "createdAt": "2024-12-15T07:30:00Z"
+  }
+]

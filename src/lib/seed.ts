@@ -78,7 +78,20 @@ async function seed() {
       { page: 'book-a-service', section: 'title', content: 'Book a Service' },
       { page: 'book-a-service', section: 'content', content: 'This is the core service of the frontend site. It will be a booking form where users fill in information about their scooter location and requirements. The form will be split into 5 different sections/pages.' },
       // Mobile Services Page
-      { page: 'mobile-services', section: 'title', content: 'Mobile Services' },
+      { page: 'mobile-services', section: 'title', content: 'Mobile Scooter Repairs Across Melbourne' },
+      { page: 'mobile-services', section: 'intro', content: 'We know it\'s not always easy to bring your scooter into a workshop. That\'s why we offer mobile repairs anywhere in greater Melbourne.' },
+      { page: 'mobile-services', section: 'how_it_works_title', content: 'How it Works:' },
+      { page: 'mobile-services', section: 'step_1', content: 'Book online in under 90 seconds' },
+      { page: 'mobile-services', section: 'step_2', content: 'Tell us your ideal time – we\'ll confirm the best slot with you' },
+      { page: 'mobile-services', section: 'step_3', content: 'Our technician comes to your location, fully equipped' },
+      { page: 'mobile-services', section: 'step_4', content: 'Most issues are fixed on the spot. If extra work is needed, we\'ll take your scooter to the workshop, repair it, and return it – with no extra fees' },
+      { page: 'mobile-services', section: 'why_choose_title', content: 'Why Choose Mobile Repairs?' },
+      { page: 'mobile-services', section: 'benefit_1', content: 'No need to transport your scooter' },
+      { page: 'mobile-services', section: 'benefit_2', content: 'Repairs done on the spot, while you wait' },
+      { page: 'mobile-services', section: 'benefit_3', content: 'Same level of service and transparency as in the workshop' },
+      { page: 'mobile-services', section: 'benefit_4', content: 'Save time, avoid hassle, and ride sooner' },
+      { page: 'mobile-services', section: 'cta_text', content: 'Book a Mobile Repair Now' },
+      { page: 'mobile-services', section: 'cta_subtitle', content: 'we\'ll come to you.' },
       { page: 'mobile-services', section: 'content', content: 'They will be an overview of the mobile services, where the service areas are, the differences in callout charges.' },
       // Services Page
       { page: 'services', section: 'title', content: 'Our Services' },
@@ -97,6 +110,7 @@ async function seed() {
       { page: 'services', section: 'service_6_title', content: 'Diagnostics' },
       { page: 'services', section: 'service_6_content', content: 'Not sure what\'s wrong? We provide full diagnostic testing for $70, giving you answers and a clear repair path.' },
       { page: 'services', section: 'cta_text', content: '👉 Book Your Repair Now – it only takes 90 seconds.' },
+
     ])
     .execute();
   

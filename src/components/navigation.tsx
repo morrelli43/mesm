@@ -27,10 +27,8 @@ export function Navigation() {
         >
           Mobile Services
         </Link>
-        <Button variant="outline" asChild>
-          <Link href="/contact">
-            Contact Us
-          </Link>
+        <Button variant="outline">
+          Contact Us
         </Button>
         <Button asChild>
           <Link href="/book-a-service">

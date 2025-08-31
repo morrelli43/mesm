@@ -52,6 +52,27 @@ async function seed() {
       // Mobile Services Page
       { page: 'mobile-services', section: 'title', content: 'Mobile Services' },
       { page: 'mobile-services', section: 'content', content: 'They will be an overview of the mobile services, where the service areas are, the differences in callout charges.' },
+      // FAQ Section
+      { page: 'faq', section: 'question_1', content: 'Do you repair all scooter brands?' },
+      { page: 'faq', section: 'answer_1', content: 'We repair most of the major e-scooter brands, including popular models from Xiaomi, Segway Ninebot, and performance scooters. Some unbranded scooters can be harder to fix, but we\'ll always do our best to find the right solution.' },
+      { page: 'faq', section: 'question_2', content: 'How much does a repair cost?' },
+      { page: 'faq', section: 'answer_2', content: 'Repair prices vary depending on the problem. We don\'t list prices upfront because every scooter issue is different. When you book online, you\'ll get an instant quote for common jobs. For more complex issues, we\'ll confirm the cost after a diagnostic check.' },
+      { page: 'faq', section: 'question_3', content: 'Do you charge for diagnostics?' },
+      { page: 'faq', section: 'answer_3', content: 'Yes. A full diagnostic is $70, even if the issue can\'t be fixed. This covers the time and expertise needed to properly test your scooter and identify the fault.' },
+      { page: 'faq', section: 'question_4', content: 'Do I need to pay a deposit when booking?' },
+      { page: 'faq', section: 'answer_4', content: 'Yes. To confirm your booking, we ask for a deposit. Don\'t worry — this amount is deducted from your final repair cost.' },
+      { page: 'faq', section: 'question_5', content: 'How quickly can you repair my scooter?' },
+      { page: 'faq', section: 'answer_5', content: 'Many common jobs, like tyre changes, can be done while you wait. If a repair needs more investigation, we\'ll give you an answer the same day. More complex work may take longer, but we\'ll always keep you informed.' },
+      { page: 'faq', section: 'question_6', content: 'Do you offer mobile repairs?' },
+      { page: 'faq', section: 'answer_6', content: 'Yes! We provide mobile e-scooter repairs across greater Melbourne. A technician will come to your location, fix your scooter on the spot, or if more work is needed, we\'ll take it to the workshop and return it — at no extra cost.' },
+      { page: 'faq', section: 'question_7', content: 'Which areas of Melbourne do you service?' },
+      { page: 'faq', section: 'answer_7', content: 'Our workshop is based in Heidelberg, but we cover all of greater Melbourne with our mobile service. Call-out charges vary depending on your distance from the workshop. For special requests outside Melbourne, contact us directly to discuss.' },
+      { page: 'faq', section: 'question_8', content: 'What if I\'m not happy with the repair?' },
+      { page: 'faq', section: 'answer_8', content: 'We stand by our work. If you\'re not satisfied, we\'ll do everything we can to make it right. While we don\'t handle manufacturer warranty repairs, we\'ll always support you with any work we\'ve completed.' },
+      { page: 'faq', section: 'question_9', content: 'Can I just walk in without a booking?' },
+      { page: 'faq', section: 'answer_9', content: 'Yes, walk-ins are welcome at our Heidelberg workshop. However, booked customers will always be given priority. For the fastest service, we recommend making a booking online first.' },
+      { page: 'faq', section: 'question_10', content: 'How do I book a repair?' },
+      { page: 'faq', section: 'answer_10', content: 'It\'s quick and easy. Just use our online form — it only takes 90 seconds to book. You\'ll get an instant quote for common jobs and confirmation once your booking is secured with a deposit.' },
     ])
     .execute();
   

@@ -22,8 +22,10 @@ async function seed() {
     .insertInto('page_content')
     .values([
       // Hero
-      { page: 'home', section: 'hero_title', content: 'Mobile eScooter Mechanics in Melbourne' },
-      { page: 'home', section: 'hero_subtitle', content: 'We come to you! Hassle-free eScooter repairs at your home or office.' },
+      { page: 'home', section: 'hero_title', content: 'Melbourne\'s Trusted e-Scooter Repair Specialists' },
+      { page: 'home', section: 'hero_subtitle', content: 'Fast, friendly, and professional repairs — from tyre punctures to complex battery issues. Book your repair in just 90 seconds.' },
+      // Introductory Copy
+      { page: 'home', section: 'intro_content', content: 'At Melbourne eScooter Mechanics, we know how frustrating it is when your scooter breaks down. Whether it\'s a flat tyre, a scooter that won\'t turn on, or crash damage, we\'ll get you back on the road quickly.\n\nUnlike other repairers, we:\n• Offer mobile repairs across greater Melbourne\n• Provide transparent service — you\'ll get photos, updates, and calls during the repair\n• Have the experience and supplier network to handle almost any scooter brand\n• Are one of the only local mechanics who can repair out-of-balance batteries\n• Work fast — many repairs done on the spot or same day\n\nDon\'t risk costly DIY mistakes or unreliable services. Trust the team that Melbourne riders recommend.' },
       // Features
       { page: 'home', section: 'feature_1_title', content: 'Best eScooter Technicians' },
       { page: 'home', section: 'feature_1_content', content: 'Our technicians are the best in Melbourne, with years of experience.' },
@@ -33,7 +35,18 @@ async function seed() {
       { page: 'home', section: 'feature_3_content', content: 'We have years of experience repairing all makes and models of eScooters.' },
       // About
       { page: 'home', section: 'about_title', content: 'About Us' },
-      { page: 'home', section: 'about_content', content: "We are here to fix your scooter as quickly and professionally as possible. Don't worry about transporting your scooter, we come to you!" },
+      { page: 'home', section: 'about_content', content: 'We\'re a small, experienced team of technicians with years of background in Australia\'s top e-scooter retailers. We\'re not tied to any manufacturer or retailer, so our advice is always honest and independent.\n\nFrom kids\' scooters to high-performance e-scooters, we\'ve seen it all. If your scooter can be fixed, we\'ll find the solution.' },
+      // Trust & Credibility
+      { page: 'home', section: 'trust_title', content: 'Trust & Credibility' },
+      { page: 'home', section: 'trust_content', content: '✔ Years of experience in the scooter industry\n✔ Strong relationships with Australia\'s biggest retailers\n✔ Independent and impartial advice — no brand bias\n✔ Transparent service — we\'ll always contact you before extra work is done\n✔ Backed by 5-star Google reviews from Melbourne scooter owners' },
+      // Testimonials
+      { page: 'home', section: 'testimonials_title', content: 'What Our Customers Say' },
+      { page: 'home', section: 'testimonial_1', content: '"Excellent service! Quick tyre replacement on the spot and friendly staff who explained everything clearly." – Sarah L.' },
+      { page: 'home', section: 'testimonial_2', content: '"Tried other places before but these guys actually fixed the problem the same day. Highly recommend." – Daniel M.' },
+      { page: 'home', section: 'testimonial_3', content: '"They kept me updated with photos and calls during the repair. Super professional and trustworthy." – Alex R.' },
+      // Final Call-to-Action
+      { page: 'home', section: 'final_cta_title', content: 'Ready to get back on the road?' },
+      { page: 'home', section: 'final_cta_content', content: 'Booking with us takes less than 90 seconds. Just tell us what\'s wrong with your scooter, choose a time, and our team will handle the rest.' },
       // Quick Message
       { page: 'home', section: 'quick_message_title', content: 'Quick Message' },
       { page: 'home', section: 'quick_message_disclaimer', content: 'Please do not use this form for booking enquiries.' },

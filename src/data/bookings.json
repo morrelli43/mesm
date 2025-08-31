@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "customerName": "Sarah Johnson",
+    "customerEmail": "sarah.j@email.com",
+    "phoneNumber": "+61 423 456 789",
+    "scooterBrand": "Xiaomi",
+    "scooterModel": "Mi Electric Scooter Pro 2",
+    "issueDescription": "Battery not charging properly, reduced range",
+    "serviceType": "repair",
+    "status": "pending",
+    "location": "Melbourne CBD",
+    "scheduledDate": "2024-12-16T10:00:00Z",
+    "estimatedCost": 120.00,
+    "createdAt": "2024-12-15T14:30:00Z"
+  },
+  {
+    "id": "2", 
+    "customerName": "Mark Thompson",
+    "customerEmail": "mark.t@gmail.com",
+    "phoneNumber": "+61 456 789 123",
+    "scooterBrand": "Segway",
+    "scooterModel": "Ninebot Max G30",
+    "issueDescription": "Regular maintenance and brake adjustment",
+    "serviceType": "maintenance",
+    "status": "in-progress",
+    "location": "South Melbourne",
+    "scheduledDate": "2024-12-15T15:00:00Z",
+    "estimatedCost": 80.00,
+    "createdAt": "2024-12-14T11:20:00Z"
+  },
+  {
+    "id": "3",
+    "customerName": "Emma Wilson", 
+    "customerEmail": "emma.wilson@hotmail.com",
+    "phoneNumber": "+61 789 123 456",
+    "scooterBrand": "Razor",
+    "scooterModel": "E300",
+    "issueDescription": "Flat tire replacement needed",
+    "serviceType": "repair", 
+    "status": "completed",
+    "location": "Richmond",
+    "scheduledDate": "2024-12-14T09:00:00Z",
+    "estimatedCost": 45.00,
+    "createdAt": "2024-12-13T16:45:00Z"
+  }
+]

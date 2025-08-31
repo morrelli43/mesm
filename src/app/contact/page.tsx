@@ -1,8 +1,25 @@
 import { db } from "@/lib/db";
 import { Metadata } from "next";
+import { 
+  Clock, 
+  MapPin, 
+  Phone, 
+  Mail, 
+  Calendar,
+  Facebook,
+  Instagram,
+  Twitter,
+  ExternalLink
+} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export const metadata: Metadata = {
-    title: "Contact Us",
+    title: "Contact Us - Melbourne eScooter Mechanics",
+    description: "Get in touch with Melbourne's premier eScooter repair service. Find our opening hours, location, and contact information.",
 };
 
 async function getContactPageContent() {

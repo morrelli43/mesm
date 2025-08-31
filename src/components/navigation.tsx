@@ -23,6 +23,12 @@ export function Navigation() {
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
+          href="/services"
+        >
+          Services
+        </Link>
+        <Link
+          className="text-sm font-medium hover:underline underline-offset-4"
           href="/mobile-services"
         >
           Mobile Services

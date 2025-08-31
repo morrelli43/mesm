@@ -10,15 +10,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-export function QuickMessage() {
+interface QuickMessageProps {
+  title: string;
+  disclaimer: string;
+}
+
+export function QuickMessage({ title, disclaimer }: QuickMessageProps) {
   return (
     <section className="w-full py-20 bg-gray-50">
       <div className="container mx-auto">
         <Card className="max-w-xl mx-auto">
           <CardHeader>
-            <CardTitle>Quick Message</CardTitle>
+            <CardTitle>{title}</CardTitle>
             <CardDescription>
-              Please do not use this form for booking enquiries.
+              {disclaimer}
             </CardDescription>
           </CardHeader>
           <CardContent>

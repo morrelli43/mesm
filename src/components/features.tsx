@@ -1,41 +1,48 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
-export function Features() {
+interface FeaturesProps {
+  feature1Title: string;
+  feature1Content: string;
+  feature2Title: string;
+  feature2Content: string;
+  feature3Title: string;
+  feature3Content: string;
+}
+
+export function Features({
+  feature1Title,
+  feature1Content,
+  feature2Title,
+  feature2Content,
+  feature3Title,
+  feature3Content,
+}: FeaturesProps) {
   return (
     <section className="w-full py-20">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           <Card>
             <CardHeader>
-              <CardTitle>Best eScooter Technicians</CardTitle>
+              <CardTitle>{feature1Title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>
-                Our technicians are the best in Melbourne, with years of
-                experience.
-              </p>
+              <p>{feature1Content}</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Mobile Service</CardTitle>
+              <CardTitle>{feature2Title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>
-                We come to you, so you don&apos;t have to transport your
-                scooter. Weather permitting!
-              </p>
+              <p>{feature2Content}</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Years of Experience</CardTitle>
+              <CardTitle>{feature3Title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p>
-                We have years of experience repairing all makes and models of
-                eScooters.
-              </p>
+              <p>{feature3Content}</p>
             </CardContent>
           </Card>
         </div>

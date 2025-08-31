@@ -1,151 +1,139 @@
+import { db } from "@/lib/db";
 import { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Mobile Services",
 };
 
-export default function MobileServicesPage() {
+export const dynamic = 'force-dynamic';
+
+async function getMobileServicesPageContent() {
+  const content = await db
+    .selectFrom('page_content')
+    .where('page', '=', 'mobile-services')
+    .selectAll()
+    .execute();
+
+  const contentMap = content.reduce((acc, item) => {
+    acc[item.section] = item.content;
+    return acc;
+  }, {} as Record<string, string>);
+
+  return contentMap;
+}
+
+export default async function MobileServicesPage() {
+    const content = await getMobileServicesPageContent();
+
     return (
-        <div className="container mx-auto py-10">
-            <h1 className="text-4xl font-bold mb-8">Mobile Services</h1>
-            
-            {/* Overview Section */}
-            <section className="mb-12">
-                <p className="text-lg text-muted-foreground mb-8">
-                    We bring our expert eScooter repair services directly to you! Our mobile service covers the Melbourne metropolitan area, providing convenient on-site repairs and maintenance for your electric scooter.
+        <div className="container mx-auto py-10 max-w-4xl">
+            {/* Hero Section */}
+            <div className="text-center mb-12">
+                <h1 className="text-4xl font-bold mb-6">{content.title}</h1>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    {content.intro}
                 </p>
-            </section>
+            </div>
 
-            {/* Service Areas Section */}
-            <section className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Service Areas</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* How it Works Section */}
+            <div className="mb-12">
+                <h2 className="text-2xl font-semibold mb-6">{content.how_it_works_title}</h2>
+                <div className="grid md:grid-cols-2 gap-6">
                     <Card>
                         <CardHeader>
-                            <CardTitle>Inner Melbourne</CardTitle>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                                    1
+                                </div>
+                                <CardTitle className="text-lg">Quick Booking</CardTitle>
+                            </div>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-muted-foreground mb-4">
-                                CBD, Southbank, Docklands, Carlton, Fitzroy, Richmond, South Yarra, Prahran
-                            </p>
-                            <p className="font-semibold text-green-600">Standard Service Area</p>
+                            <p className="text-gray-600">{content.step_1}</p>
                         </CardContent>
                     </Card>
-                    
+
                     <Card>
                         <CardHeader>
-                            <CardTitle>Middle Ring Suburbs</CardTitle>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                                    2
+                                </div>
+                                <CardTitle className="text-lg">Schedule Confirmation</CardTitle>
+                            </div>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-muted-foreground mb-4">
-                                Brunswick, Thornbury, Hawthorn, Camberwell, Caulfield, St Kilda, Port Melbourne
-                            </p>
-                            <p className="font-semibold text-blue-600">Extended Service Area</p>
+                            <p className="text-gray-600">{content.step_2}</p>
                         </CardContent>
                     </Card>
-                    
+
                     <Card>
                         <CardHeader>
-                            <CardTitle>Outer Suburbs</CardTitle>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                                    3
+                                </div>
+                                <CardTitle className="text-lg">Mobile Service</CardTitle>
+                            </div>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-muted-foreground mb-4">
-                                Footscray, Preston, Box Hill, Glen Waverley, Moorabbin, Brighton
-                            </p>
-                            <p className="font-semibold text-orange-600">Premium Service Area</p>
+                            <p className="text-gray-600">{content.step_3}</p>
+                        </CardContent>
+                    </Card>
+
+                    <Card>
+                        <CardHeader>
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                                    4
+                                </div>
+                                <CardTitle className="text-lg">Complete Service</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-gray-600">{content.step_4}</p>
                         </CardContent>
                     </Card>
                 </div>
-            </section>
+            </div>
 
-            {/* Callout Charges Section */}
-            <section className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Callout Charges</h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-green-600">Standard Areas</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-3xl font-bold mb-2">$25</div>
-                            <p className="text-sm text-muted-foreground mb-4">
-                                Inner Melbourne suburbs within 10km of CBD
-                            </p>
-                            <ul className="text-sm space-y-1">
-                                <li>• Free quotes included</li>
-                                <li>• Same day service available</li>
-                                <li>• No additional travel time</li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-                    
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-blue-600">Extended Areas</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-3xl font-bold mb-2">$40</div>
-                            <p className="text-sm text-muted-foreground mb-4">
-                                Middle ring suburbs 10-20km from CBD
-                            </p>
-                            <ul className="text-sm space-y-1">
-                                <li>• Free quotes included</li>
-                                <li>• Next day service available</li>
-                                <li>• Slightly longer travel time</li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-                    
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-orange-600">Premium Areas</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-3xl font-bold mb-2">$60</div>
-                            <p className="text-sm text-muted-foreground mb-4">
-                                Outer suburbs beyond 20km from CBD
-                            </p>
-                            <ul className="text-sm space-y-1">
-                                <li>• Free quotes included</li>
-                                <li>• Scheduled service times</li>
-                                <li>• Extended travel required</li>
-                            </ul>
-                        </CardContent>
-                    </Card>
+            {/* Why Choose Mobile Repairs Section */}
+            <div className="mb-12">
+                <h2 className="text-2xl font-semibold mb-6">{content.why_choose_title}</h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start gap-3">
+                        <div className="text-green-500 text-xl">✓</div>
+                        <p className="text-gray-700">{content.benefit_1}</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                        <div className="text-green-500 text-xl">✓</div>
+                        <p className="text-gray-700">{content.benefit_2}</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                        <div className="text-green-500 text-xl">✓</div>
+                        <p className="text-gray-700">{content.benefit_3}</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                        <div className="text-green-500 text-xl">✓</div>
+                        <p className="text-gray-700">{content.benefit_4}</p>
+                    </div>
                 </div>
-            </section>
+            </div>
 
-            {/* Additional Information */}
-            <section className="mb-8">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Important Service Information</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 className="font-semibold mb-2">Service Conditions</h4>
-                                <ul className="text-sm space-y-1 text-muted-foreground">
-                                    <li>• Weather permitting (indoor repairs preferred)</li>
-                                    <li>• Callout charge waived if repair is completed</li>
-                                    <li>• Minimum 2-hour booking window</li>
-                                    <li>• Power outlet access required for some repairs</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="font-semibold mb-2">What We Bring</h4>
-                                <ul className="text-sm space-y-1 text-muted-foreground">
-                                    <li>• Complete mobile workshop setup</li>
-                                    <li>• Diagnostic equipment and tools</li>
-                                    <li>• Common replacement parts</li>
-                                    <li>• All safety equipment</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
-            </section>
+            {/* Call to Action */}
+            <div className="text-center bg-blue-50 p-8 rounded-lg">
+                <p className="text-lg mb-4">
+                    <span className="text-2xl">👉</span> <strong>{content.cta_text}</strong> – {content.cta_subtitle}
+                </p>
+                <Link href="/book-a-service">
+                    <Button size="lg" className="text-lg px-8 py-3">
+                        Book a Mobile Repair Now
+                    </Button>
+                </Link>
+            </div>
         </div>
     );
 }

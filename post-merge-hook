@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# This hook runs the rebuild script after a successful merge.
+
+echo "Merge complete. Running rebuild script..."
+/workspaces/mesm/scripts/rebuild.sh

@@ -3,10 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'standalone',
-  experimental: {
-    outputFileTracingIncludes: {
-      '/api/**/*': ['./node_modules/**/*.wasm', './node_modules/**/*.node'],
-    },
+  outputFileTracingIncludes: {
+    '/api/**/*': ['./node_modules/**/*.wasm', './node_modules/**/*.node'],
   },
   env: {
     ENVIRONMENT: process.env.ENVIRONMENT || 'development',

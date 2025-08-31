@@ -46,3 +46,4 @@ backups/*.sql
 
 # docker volumes
 postgres_data/
+.env

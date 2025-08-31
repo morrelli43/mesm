@@ -24,26 +24,16 @@ export function Navigation() {
 
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
-          href="/services"
-        >
-          Services
-        </Link>
-
-        <Button asChild>
-          <Link href="/book-a-service">
-            Book a Service
-          </Link>
-        </Button>
-
-        <Link
-          className="text-sm font-medium hover:underline underline-offset-4"
           href="/mobile-services"
         >
           Mobile Services
         </Link>
-        <Button variant="outline">
+        <Link
+          className="text-sm font-medium hover:underline underline-offset-4"
+          href="/contact"
+        >
           Contact Us
-        </Button>
+        </Link>
         <Button asChild>
           <Link href="/book-a-service">
             Book a Service

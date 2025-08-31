@@ -21,12 +21,20 @@ export function Navigation() {
         >
           For Sale
         </Link>
+
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/services"
         >
           Services
         </Link>
+
+        <Button asChild>
+          <Link href="/book-a-service">
+            Book a Service
+          </Link>
+        </Button>
+
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/mobile-services"

@@ -1,15 +1,47 @@
 version: '3.8'
+
 services:
-  db:
+  # PostgreSQL Database
+  postgres:
     image: postgres:15-alpine
-    restart: always
+    container_name: mesm-postgres
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     ports:
-      - '5432:5432'
+      - "${DATABASE_PORT}:5432"
     volumes:
-      - db:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups
+    networks:
+      - mesm-network
+    restart: unless-stopped
+
+  # MESM Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        ENVIRONMENT: ${ENVIRONMENT:-development}
+    container_name: mesm-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DATABASE_URL=${DATABASE_URL}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+    depends_on:
+      - postgres
+    networks:
+      - mesm-network
+    restart: unless-stopped
+
 volumes:
-  db:
-    driver: local
+  postgres_data:
+
+networks:
+  mesm-network:
+    driver: bridge

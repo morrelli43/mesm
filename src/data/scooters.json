@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "brand": "Xiaomi",
+    "model": "Mi Electric Scooter Pro 2",
+    "year": 2023,
+    "condition": "excellent",
+    "price": 599.00,
+    "originalPrice": 799.00,
+    "description": "Fully refurbished with new battery. 45km range, LED display, and app connectivity.",
+    "features": ["New battery", "LED display", "App connectivity", "25km/h max speed"],
+    "imageUrl": "/scooters/xiaomi-pro2.jpg",
+    "inStock": true,
+    "mileage": 245,
+    "warranty": "6 months",
+    "createdAt": "2024-12-10T10:00:00Z"
+  },
+  {
+    "id": "2",
+    "brand": "Segway",
+    "model": "Ninebot Max G30",
+    "year": 2022,
+    "condition": "very good", 
+    "price": 749.00,
+    "originalPrice": 999.00,
+    "description": "Long-range scooter with 65km range. Recently serviced with performance upgrades.",
+    "features": ["65km range", "350W motor", "Pneumatic tires", "Bluetooth"],
+    "imageUrl": "/scooters/segway-max.jpg",
+    "inStock": true,
+    "mileage": 456,
+    "warranty": "3 months",
+    "createdAt": "2024-12-08T14:30:00Z"
+  },
+  {
+    "id": "3",
+    "brand": "Kaabo",
+    "model": "Mantis 10 Eco",
+    "year": 2023,
+    "condition": "good",
+    "price": 1299.00,
+    "originalPrice": 1699.00,
+    "description": "High-performance dual motor scooter. Perfect for hills and long commutes.",
+    "features": ["Dual 800W motors", "Hydraulic brakes", "60km range", "Off-road capable"],
+    "imageUrl": "/scooters/kaabo-mantis.jpg", 
+    "inStock": false,
+    "mileage": 789,
+    "warranty": "12 months",
+    "createdAt": "2024-12-05T09:15:00Z"
+  }
+]

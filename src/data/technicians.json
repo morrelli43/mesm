@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Alex Rodriguez",
+    "email": "alex.r@mesm.com.au",
+    "phone": "+61 412 345 678",
+    "specialization": "Battery Systems",
+    "experience": "5 years",
+    "rating": 4.8,
+    "status": "available",
+    "location": "Melbourne CBD",
+    "avatarUrl": "/avatars/tech-01.png",
+    "completedJobs": 247,
+    "createdAt": "2024-01-15T09:00:00Z"
+  },
+  {
+    "id": "2", 
+    "name": "Lisa Chen",
+    "email": "lisa.c@mesm.com.au",
+    "phone": "+61 423 567 890",
+    "specialization": "Mechanical Repairs",
+    "experience": "7 years", 
+    "rating": 4.9,
+    "status": "busy",
+    "location": "South Melbourne",
+    "avatarUrl": "/avatars/tech-02.png",
+    "completedJobs": 389,
+    "createdAt": "2023-09-10T08:00:00Z"
+  },
+  {
+    "id": "3",
+    "name": "David Kim",
+    "email": "david.k@mesm.com.au", 
+    "phone": "+61 434 678 901",
+    "specialization": "Electronics & Diagnostics",
+    "experience": "3 years",
+    "rating": 4.7,
+    "status": "available",
+    "location": "Richmond", 
+    "avatarUrl": "/avatars/tech-03.png",
+    "completedJobs": 156,
+    "createdAt": "2024-03-20T10:30:00Z"
+  }
+]

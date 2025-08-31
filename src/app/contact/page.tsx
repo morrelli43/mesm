@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     description: "Get in touch with Melbourne's premier eScooter repair service. Find our opening hours, location, and contact information.",
 };
 
+export const dynamic = 'force-dynamic';
+
 async function getContactPageContent() {
   const content = await db
     .selectFrom('page_content')

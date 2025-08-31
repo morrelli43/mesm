@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "About Us",
 };
 
+export const dynamic = 'force-dynamic';
+
 async function getAboutPageContent() {
   const content = await db
     .selectFrom('page_content')

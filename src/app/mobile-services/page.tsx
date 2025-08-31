@@ -6,6 +6,8 @@ export const metadata: Metadata = {
     title: "Mobile Services",
 };
 
+export const dynamic = 'force-dynamic';
+
 async function getMobileServicesPageContent() {
   const content = await db
     .selectFrom('page_content')

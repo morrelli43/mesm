@@ -4,6 +4,8 @@ import { Features } from "@/components/features";
 import { About } from "@/components/about";
 import { QuickMessage } from "@/components/quick-message";
 
+export const dynamic = 'force-dynamic';
+
 async function getHomePageContent() {
   const content = await db
     .selectFrom('page_content')

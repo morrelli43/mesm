@@ -6,6 +6,8 @@ export const metadata: Metadata = {
     title: "Book a Service",
 };
 
+export const dynamic = 'force-dynamic';
+
 async function getBookAServicePageContent() {
   const content = await db
     .selectFrom('page_content')

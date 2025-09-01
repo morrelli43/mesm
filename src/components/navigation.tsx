@@ -19,14 +19,19 @@ export function Navigation() {
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/for-sale"
         >
-          For Sale
+          Refurbs for Sale
         </Link>
-
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
           href="/mobile-services"
         >
-          Mobile Services
+          Mobile Repairs
+        </Link>
+        <Link
+          className="text-sm font-medium hover:underline underline-offset-4"
+          href="/services"
+        >
+          Services
         </Link>
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"

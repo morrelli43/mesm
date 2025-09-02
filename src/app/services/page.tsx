@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { mockServicesPageContent } from "@/lib/mock-data";
 import { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,18 +12,23 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 async function getServicesPageContent() {
-  const content = await db
-    .selectFrom('page_content')
-    .where('page', '=', 'services')
-    .selectAll()
-    .execute();
+  try {
+    const content = await db
+      .selectFrom('page_content')
+      .where('page', '=', 'services')
+      .selectAll()
+      .execute();
 
-  const contentMap = content.reduce((acc, item) => {
-    acc[item.section] = item.content;
-    return acc;
-  }, {} as Record<string, string>);
+    const contentMap = content.reduce((acc, item) => {
+      acc[item.section] = item.content;
+      return acc;
+    }, {} as Record<string, string>);
 
-  return contentMap;
+    return contentMap;
+  } catch (error) {
+    console.log('Database not available, using mock data:', error);
+    return mockServicesPageContent;
+  }
 }
 
 export default async function ServicesPage() {

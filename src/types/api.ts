@@ -54,6 +54,12 @@ export interface Scooter {
   originalPrice: number;
   description: string;
   features: string[];
+  specs: {
+    topSpeed: string;
+    range: string;
+    weight: string;
+  };
+  images: string[];
   imageUrl: string | null;
   inStock: boolean;
   mileage: number;

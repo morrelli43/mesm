@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { ScooterCard } from "@/components/scooter-card";
 import { Scooter } from "@/types/api";
 
 // Note: This would be better as a server component, but for now making it client-side
 // to handle the read more functionality easily
 export default function ForSalePage() {
+    const router = useRouter();
     const [scooters, setScooters] = useState<Scooter[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -32,11 +34,8 @@ export default function ForSalePage() {
     };
 
     const handleReadMore = (scooterId: string) => {
-        // TODO: Navigate to product details page when implemented
-        // For now, we'll just log the ID
-        console.log('Read more for scooter:', scooterId);
-        // Future implementation:
-        // router.push(`/for-sale/${scooterId}`);
+        // Navigate to product details page
+        router.push(`/for-sale/${scooterId}`);
     };
 
     if (loading) {

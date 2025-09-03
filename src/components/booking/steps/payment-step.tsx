@@ -114,7 +114,7 @@ export function PaymentStep({ formData }: PaymentStepProps) {
           </div>
           
           <div className="text-xs text-muted-foreground text-center">
-            🔒 Your payment information is secure and encrypted
+            Your payment information is secure and encrypted
           </div>
         </CardContent>
       </Card>

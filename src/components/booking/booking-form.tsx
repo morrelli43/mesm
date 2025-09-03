@@ -14,13 +14,16 @@ import { ConfirmationStep } from "./steps/confirmation-step";
 // Form data interface
 interface BookingFormData {
   // Step 1: Initial Information
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
   
   // Step 2: Scooter Information
   manufacturer: string;
   model: string;
+  customManufacturer?: string;
+  customModel?: string;
   
   // Step 3: Service Requirements
   issueType: string;
@@ -37,11 +40,14 @@ interface BookingFormData {
 }
 
 const initialFormData: BookingFormData = {
-  name: "",
+  firstName: "",
+  lastName: "",
   email: "",
   phone: "",
   manufacturer: "",
   model: "",
+  customManufacturer: "",
+  customModel: "",
   issueType: "",
   customDescription: "",
   serviceType: "in-store",
@@ -99,11 +105,16 @@ export function BookingForm() {
   const canProceed = () => {
     switch (currentStep) {
       case 1:
-        return formData.name && formData.email && formData.phone;
+        return formData.firstName && formData.lastName && formData.email && formData.phone;
       case 2:
-        return formData.manufacturer;
+        return formData.manufacturer && (
+          formData.manufacturer === "unknown" || 
+          formData.manufacturer === "custom" && formData.customManufacturer ||
+          formData.manufacturer !== "custom"
+        );
       case 3:
-        return formData.manufacturer === "unknown" || formData.model;
+        return formData.manufacturer === "unknown" || formData.model || 
+               (formData.manufacturer === "custom" && formData.customModel);
       case 4:
         return formData.issueType && formData.preferredDate && formData.preferredTime &&
                (formData.serviceType === "in-store" || formData.address);

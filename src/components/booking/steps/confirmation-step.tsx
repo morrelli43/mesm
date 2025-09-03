@@ -4,11 +4,14 @@ import { Label } from "@/components/ui/label";
 
 interface ConfirmationStepProps {
   formData: {
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
     phone: string;
     manufacturer: string;
     model: string;
+    customManufacturer?: string;
+    customModel?: string;
     issueType: string;
     customDescription: string;
     serviceType: "in-store" | "mobile";
@@ -64,7 +67,7 @@ export function ConfirmationStep({ formData, updateFormData, onEdit }: Confirmat
           </Button>
         </CardHeader>
         <CardContent className="space-y-2">
-          <div><strong>Name:</strong> {formData.name}</div>
+          <div><strong>Name:</strong> {formData.firstName} {formData.lastName}</div>
           <div><strong>Email:</strong> {formData.email}</div>
           <div><strong>Phone:</strong> {formData.phone}</div>
         </CardContent>
@@ -130,7 +133,7 @@ export function ConfirmationStep({ formData, updateFormData, onEdit }: Confirmat
           {formData.createAccount && (
             <div className="p-4 bg-green-50 rounded-lg border border-green-200">
               <p className="text-sm text-green-800">
-                ✅ Great! We&apos;ll create an account for you using your email address. You&apos;ll receive login details after your booking is confirmed.
+                Great! We&apos;ll create an account for you using your email address. You&apos;ll receive login details after your booking is confirmed.
               </p>
             </div>
           )}

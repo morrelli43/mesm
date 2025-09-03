@@ -6,6 +6,8 @@ interface ScooterModelStepProps {
   formData: {
     manufacturer: string;
     model: string;
+    customManufacturer?: string;
+    customModel?: string;
   };
   updateFormData: (updates: Partial<{ model: string }>) => void;
 }
@@ -27,12 +29,25 @@ const modelsByManufacturer: Record<string, string[]> = {
 };
 
 export function ScooterModelStep({ formData, updateFormData }: ScooterModelStepProps) {
-  // Skip this step if manufacturer is unknown
+  // Skip this step if manufacturer is unknown or custom
   if (formData.manufacturer === "unknown") {
     return (
       <div className="text-center space-y-4">
         <p className="text-lg">Since you don&apos;t know your scooter brand, we&apos;ll skip the model selection.</p>
         <p className="text-muted-foreground">Our technicians will help identify your scooter during the service.</p>
+      </div>
+    );
+  }
+
+  if (formData.manufacturer === "custom") {
+    return (
+      <div className="text-center space-y-4">
+        <p className="text-lg">You&apos;ve provided custom scooter details.</p>
+        <p className="text-muted-foreground">
+          Manufacturer: {formData.customManufacturer || "Not specified"}<br/>
+          Model: {formData.customModel || "Not specified"}
+        </p>
+        <p className="text-muted-foreground">Our technicians will confirm these details during the service.</p>
       </div>
     );
   }

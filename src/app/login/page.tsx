@@ -142,7 +142,7 @@ export default function LoginPage() {
               )}
               
               {isSignUp && (
-                <div className="space-y-2">
+                <div className="grid w-full items-center gap-1.5">
                   <Label htmlFor="name">Full Name</Label>
                   <Input
                     id="name"
@@ -155,7 +155,7 @@ export default function LoginPage() {
                 </div>
               )}
 
-              <div className="space-y-2">
+              <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -167,7 +167,7 @@ export default function LoginPage() {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"

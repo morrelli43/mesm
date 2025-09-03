@@ -188,7 +188,7 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid gap-4 md:grid-cols-2">
-                      <div>
+                      <div className="grid w-full items-center gap-1.5">
                         <Label htmlFor="firstName">First Name *</Label>
                         <Input
                           id="firstName"
@@ -199,7 +199,7 @@ export default function ContactPage() {
                         />
                       </div>
                       
-                      <div>
+                      <div className="grid w-full items-center gap-1.5">
                         <Label htmlFor="surname">Surname *</Label>
                         <Input
                           id="surname"
@@ -212,7 +212,7 @@ export default function ContactPage() {
                     </div>
                     
                     <div className="grid gap-4 md:grid-cols-2">
-                      <div>
+                      <div className="grid w-full items-center gap-1.5">
                         <Label htmlFor="email">Email Address</Label>
                         <Input
                           id="email"
@@ -223,7 +223,7 @@ export default function ContactPage() {
                         />
                       </div>
                       
-                      <div>
+                      <div className="grid w-full items-center gap-1.5">
                         <Label htmlFor="phone">Phone Number</Label>
                         <Input
                           id="phone"
@@ -235,7 +235,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     
-                    <div>
+                    <div className="grid w-full items-center gap-1.5">
                       <Label htmlFor="subject">Subject *</Label>
                       <Input
                         id="subject"
@@ -246,7 +246,7 @@ export default function ContactPage() {
                       />
                     </div>
                     
-                    <div>
+                    <div className="grid w-full items-center gap-1.5">
                       <Label htmlFor="message">Message *</Label>
                       <Textarea
                         id="message"

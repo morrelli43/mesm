@@ -88,7 +88,7 @@ function EditScooterModal({ scooter, onSave, onClose }: EditScooterModalProps) {
 
         {formData.make === 'unknown' && (
           <>
-            <div>
+            <div className="grid w-full items-center gap-1.5">
               <Label htmlFor="customMake">Custom Make</Label>
               <Input
                 id="customMake"
@@ -97,7 +97,7 @@ function EditScooterModal({ scooter, onSave, onClose }: EditScooterModalProps) {
                 placeholder="Enter custom make"
               />
             </div>
-            <div>
+            <div className="grid w-full items-center gap-1.5">
               <Label htmlFor="customModel">Custom Model</Label>
               <Input
                 id="customModel"
@@ -110,7 +110,7 @@ function EditScooterModal({ scooter, onSave, onClose }: EditScooterModalProps) {
         )}
 
         {formData.make !== 'unknown' && (
-          <div>
+          <div className="grid w-full items-center gap-1.5">
             <Label htmlFor="model">Model</Label>
             <Input
               id="model"
@@ -121,7 +121,7 @@ function EditScooterModal({ scooter, onSave, onClose }: EditScooterModalProps) {
           </div>
         )}
 
-        <div>
+        <div className="grid w-full items-center gap-1.5">
           <Label htmlFor="serialNumber">Serial Number (Optional)</Label>
           <Input
             id="serialNumber"

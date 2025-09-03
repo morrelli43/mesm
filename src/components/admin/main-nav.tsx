@@ -29,28 +29,52 @@ export function MainNav({
         Dashboard
       </Link>
       <Link
-        href="/admin/jobs"
+        href="/admin/details"
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          pathname?.startsWith("/admin/jobs")
+          pathname?.startsWith("/admin/details")
             ? "bg-muted hover:bg-muted"
             : "hover:bg-transparent hover:underline",
           "justify-start"
         )}
       >
-        Jobs
+        Your Details
       </Link>
       <Link
-        href="/admin/technicians"
+        href="/admin/scooters"
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          pathname?.startsWith("/admin/technicians")
+          pathname?.startsWith("/admin/scooters")
             ? "bg-muted hover:bg-muted"
             : "hover:bg-transparent hover:underline",
           "justify-start"
         )}
       >
-        Technicians
+        Your eScooters
+      </Link>
+      <Link
+        href="/admin/appointments"
+        className={cn(
+          buttonVariants({ variant: "ghost" }),
+          pathname?.startsWith("/admin/appointments")
+            ? "bg-muted hover:bg-muted"
+            : "hover:bg-transparent hover:underline",
+          "justify-start"
+        )}
+      >
+        Appointments
+      </Link>
+      <Link
+        href="/admin/contact"
+        className={cn(
+          buttonVariants({ variant: "ghost" }),
+          pathname?.startsWith("/admin/contact")
+            ? "bg-muted hover:bg-muted"
+            : "hover:bg-transparent hover:underline",
+          "justify-start"
+        )}
+      >
+        Contact Us
       </Link>
     </nav>
   );

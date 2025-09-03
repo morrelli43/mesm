@@ -41,9 +41,9 @@ async function seed() {
       { page: 'home', section: 'trust_content', content: '✔ Years of experience in the scooter industry\n✔ Strong relationships with Australia\'s biggest retailers\n✔ Independent and impartial advice — no brand bias\n✔ Transparent service — we\'ll always contact you before extra work is done\n✔ Backed by 5-star Google reviews from Melbourne scooter owners' },
       // Testimonials
       { page: 'home', section: 'testimonials_title', content: 'What Our Customers Say' },
-      { page: 'home', section: 'testimonial_1', content: '"Excellent service! Quick tyre replacement on the spot and friendly staff who explained everything clearly." – Sarah L.' },
-      { page: 'home', section: 'testimonial_2', content: '"Tried other places before but these guys actually fixed the problem the same day. Highly recommend." – Daniel M.' },
-      { page: 'home', section: 'testimonial_3', content: '"They kept me updated with photos and calls during the repair. Super professional and trustworthy." – Alex R.' },
+      { page: 'home', section: 'testimonial_1', content: '⭐️⭐️⭐️⭐️⭐️\n"Excellent service! Quick tyre replacement on the spot and friendly staff who explained everything clearly." – Sarah L.' },
+      { page: 'home', section: 'testimonial_2', content: '⭐️⭐️⭐️⭐️⭐️\n"Tried other places before but these guys actually fixed the problem the same day. Highly recommend." – Daniel M.' },
+      { page: 'home', section: 'testimonial_3', content: '⭐️⭐️⭐️⭐️⭐️\n"They kept me updated with photos and calls during the repair. Super professional and trustworthy." – Alex R.' },
       // Final Call-to-Action
       { page: 'home', section: 'final_cta_title', content: 'Ready to get back on the road?' },
       { page: 'home', section: 'final_cta_content', content: 'Booking with us takes less than 90 seconds. Just tell us what\'s wrong with your scooter, choose a time, and our team will handle the rest.' },

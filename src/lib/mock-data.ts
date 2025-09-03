@@ -34,6 +34,21 @@ export const mockServicesPageContent = {
   cta_text: '👉 Book Your Repair Now – it only takes 90 seconds.'
 };
 
+export const mockFAQContent = {
+  question_1: 'How long does a typical repair take?',
+  answer_1: 'Most common repairs like tyre replacements take 15-30 minutes. More complex issues may take 1-2 hours. We\'ll always give you an estimated timeframe when you book.',
+  question_2: 'Do you offer mobile repairs?',
+  answer_2: 'Yes! We offer mobile repair services across greater Melbourne. Our technician will come to your location with all necessary tools and parts.',
+  question_3: 'What brands of e-scooters do you service?',
+  answer_3: 'We service all major e-scooter brands including Xiaomi, Segway, Kaabo, Zero, and many others. If you\'re unsure, just ask when booking.',
+  question_4: 'How much does a diagnostic cost?',
+  answer_4: 'Our diagnostic service costs $70. This fee is often waived if you proceed with the recommended repair.',
+  question_5: 'Do you provide warranties on repairs?',
+  answer_5: 'Yes, we provide warranties on all our work. The length varies depending on the type of repair, but we stand behind our quality workmanship.',
+  question_6: 'Can you repair batteries that won\'t charge?',
+  answer_6: 'Absolutely! We\'re one of the few local mechanics specializing in battery repairs and balancing. We can often restore batteries that others consider unrepairable.'
+};
+
 export const mockForSalePageContent = {
   title: 'For Sale',
   content: 'This will list eScooters that have been refurbished by our technicians. You can trust that these second hand scooters have been fully checked and are in great condition. Some scooters will even have modifications added to them, we believe improve from the manufacturers implementations.'

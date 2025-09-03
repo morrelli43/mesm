@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { FAQ } from "@/components/faq";
+import { getFAQContent } from "@/lib/content";
 
 export const metadata: Metadata = {
     title: "Our Services",
@@ -33,6 +35,7 @@ async function getServicesPageContent() {
 
 export default async function ServicesPage() {
     const content = await getServicesPageContent();
+    const faqItems = await getFAQContent();
 
     // Group services data
     const services = [
@@ -66,7 +69,7 @@ export default async function ServicesPage() {
                 ))}
             </div>
 
-            <div className="text-center mt-8">
+            <div className="text-center mt-8 mb-12">
                 <p className="text-lg mb-4">{content.cta_text}</p>
                 <Button asChild size="lg">
                     <Link href="/book-a-service">
@@ -74,6 +77,13 @@ export default async function ServicesPage() {
                     </Link>
                 </Button>
             </div>
+
+            {/* FAQ Section */}
+            <FAQ 
+                items={faqItems} 
+                title="Frequently Asked Questions"
+                className="py-0"
+            />
         </div>
     );
 }

@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "db:seed": "node -r esbuild-register ./src/lib/seed.ts"
+    "db:seed": "node -r esbuild-register ./src/lib/seed.ts",
+    "db:seed-user": "node -r esbuild-register ./src/lib/seed-user.ts"
   },
   "dependencies": {
+    "@libsql/kysely-libsql": "^0.4.1",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-checkbox": "^1.3.3",
     "@radix-ui/react-dialog": "^1.1.15",
@@ -20,7 +22,11 @@
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.13",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.13",
+    "bcryptjs": "^3.0.2",
     "better-auth": "^1.3.7",
+    "better-sqlite3": "^12.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.1",

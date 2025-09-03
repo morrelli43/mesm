@@ -3,8 +3,8 @@ import { nextCookies } from "better-auth/next-js";
 
 export const auth = betterAuth({
   database: {
-    provider: "postgresql",
-    url: process.env.DATABASE_URL || "postgresql://localhost:5432/mesm_development",
+    provider: "sqlite",
+    url: "./dev.db",
   },
   secret: process.env.BETTER_AUTH_SECRET || "fallback-secret-for-development-only",
   emailAndPassword: {

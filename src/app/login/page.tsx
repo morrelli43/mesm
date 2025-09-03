@@ -17,11 +17,13 @@ export default function LoginPage() {
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
 
     try {
       if (isSignUp) {
@@ -32,6 +34,7 @@ export default function LoginPage() {
       router.push("/admin");
     } catch (error) {
       console.error("Authentication error:", error);
+      setError("Authentication failed. Please try again or check server logs for database connection issues.");
     } finally {
       setIsLoading(false);
     }
@@ -132,6 +135,12 @@ export default function LoginPage() {
             </div>
 
             <form onSubmit={handleEmailAuth} className="space-y-4">
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                  {error}
+                </div>
+              )}
+              
               {isSignUp && (
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>

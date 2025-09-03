@@ -22,9 +22,10 @@ interface ConfirmationStepProps {
   };
   updateFormData: (updates: Partial<{ createAccount: boolean }>) => void;
   onEdit: (step: number) => void;
+  onComplete?: () => void;
 }
 
-export function ConfirmationStep({ formData, updateFormData, onEdit }: ConfirmationStepProps) {
+export function ConfirmationStep({ formData, updateFormData, onEdit, onComplete }: ConfirmationStepProps) {
   const formatDate = (dateString: string) => {
     if (!dateString) return "Not specified";
     const date = new Date(dateString);
@@ -45,8 +46,11 @@ export function ConfirmationStep({ formData, updateFormData, onEdit }: Confirmat
   };
 
   const handleCompleteBooking = () => {
-    // In a real app, this would submit the booking
-    alert("Booking completed! Thank you for choosing Melbourne eScooter Mechanics.");
+    // In a real app, this would submit the booking to the server
+    // For now, we'll just move to the success step
+    if (onComplete) {
+      onComplete();
+    }
   };
 
   return (

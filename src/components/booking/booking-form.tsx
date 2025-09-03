@@ -10,6 +10,7 @@ import { ScooterModelStep } from "./steps/scooter-model-step";
 import { ServiceRequirementsStep } from "./steps/service-requirements-step";
 import { PaymentStep } from "./steps/payment-step";
 import { ConfirmationStep } from "./steps/confirmation-step";
+import { SuccessStep } from "./steps/success-step";
 
 // Form data interface
 interface BookingFormData {
@@ -61,7 +62,7 @@ export function BookingForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<BookingFormData>(initialFormData);
   
-  const totalSteps = 6; // Updated to 6 steps: 1. Info, 2. Manufacturer, 3. Model, 4. Service, 5. Payment, 6. Confirmation
+  const totalSteps = 7; // Updated: 1. Info, 2. Manufacturer, 3. Model, 4. Service, 5. Payment, 6. Confirmation, 7. Success
   const progress = (currentStep / totalSteps) * 100;
 
   const updateFormData = (updates: Partial<BookingFormData>) => {
@@ -98,6 +99,7 @@ export function BookingForm() {
       case 4: return "Service Requirements";
       case 5: return "Payment";
       case 6: return "Confirmation";
+      case 7: return "Success";
       default: return "";
     }
   };
@@ -122,6 +124,8 @@ export function BookingForm() {
         return true; // Payment step
       case 6:
         return true; // Confirmation step
+      case 7:
+        return true; // Success step
       default:
         return false;
     }
@@ -176,11 +180,22 @@ export function BookingForm() {
           
           {currentStep === 6 && (
             <div className="space-y-4">
-              <ConfirmationStep formData={formData} updateFormData={updateFormData} onEdit={goToStep} />
+              <ConfirmationStep 
+                formData={formData} 
+                updateFormData={updateFormData} 
+                onEdit={goToStep}
+                onComplete={() => setCurrentStep(7)}
+              />
             </div>
           )}
           
-          {currentStep < 6 && (
+          {currentStep === 7 && (
+            <div className="space-y-4">
+              <SuccessStep formData={formData} updateFormData={updateFormData} />
+            </div>
+          )}
+          
+          {currentStep < 7 && (
             <div className="flex justify-between mt-8">
               <Button 
                 variant="outline" 
@@ -193,7 +208,7 @@ export function BookingForm() {
                 onClick={goToNextStep}
                 disabled={!canProceed()}
               >
-                {currentStep === 5 ? "Review Booking" : "Next"}
+                {currentStep === 5 ? "Review Booking" : currentStep === 6 ? "Complete Booking" : "Next"}
               </Button>
             </div>
           )}

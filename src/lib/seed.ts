@@ -134,6 +134,34 @@ async function seed() {
       { page: 'services', section: 'service_6_content', content: 'Not sure what\'s wrong? We provide full diagnostic testing for $70, giving you answers and a clear repair path.' },
       { page: 'services', section: 'cta_text', content: '👉 Book Your Repair Now – it only takes 90 seconds.' },
 
+      // Quality Guarantee Page
+      { page: 'quality-guarantee', section: 'title', content: 'Our Quality Guarantee' },
+      { page: 'quality-guarantee', section: 'intro', content: 'At Melbourne eScooter Mechanics, we know how important it is to trust the people working on your scooter. That\'s why we back every repair with our Quality Guarantee.' },
+      { page: 'quality-guarantee', section: 'what_means_title', content: 'What Our Guarantee Means for You' },
+      { page: 'quality-guarantee', section: 'stand_by_work', content: 'We stand by our work – If you\'re not satisfied with the repair, we\'ll do everything we can to make it right.' },
+      { page: 'quality-guarantee', section: 'transparency', content: 'Transparency at every step – You\'ll receive updates, photos, and calls during your repair, so there are no surprises.' },
+      { page: 'quality-guarantee', section: 'no_hidden_costs', content: 'No hidden costs – If something comes up that changes the repair or cost, we\'ll always get your approval first.' },
+      { page: 'quality-guarantee', section: 'trusted_experience', content: 'Trusted experience – With years of technical experience in Australia\'s e-scooter industry, you can be confident your scooter is in the right hands.' },
+      { page: 'quality-guarantee', section: 'independent_advice', content: 'Independent advice – We\'re not tied to any retailer or brand, so our recommendations are always about what\'s best for you.' },
+      { page: 'quality-guarantee', section: 'important_title', content: 'Important to Know' },
+      { page: 'quality-guarantee', section: 'warranty_note', content: 'We don\'t carry out manufacturer warranty repairs. If your issue is covered by a warranty, we recommend contacting the retailer or manufacturer directly. However, if you need independent service, maintenance, or out-of-warranty support, we\'re here to help.' },
+      { page: 'quality-guarantee', section: 'promise_title', content: 'Our Promise to Riders' },
+      { page: 'quality-guarantee', section: 'promise_content', content: 'Your scooter\'s safety and performance are our top priority. When you choose Melbourne eScooter Mechanics, you\'re choosing a repair team that cares as much about your ride as you do.' },
+      { page: 'quality-guarantee', section: 'cta_text', content: 'Book Your Repair in 90 Seconds' },
+      { page: 'quality-guarantee', section: 'cta_subtitle', content: 'Friendly, professional, and guaranteed service.' },
+
+      // Quality Guarantee FAQ Section
+      { page: 'quality-guarantee', section: 'faq_question_1', content: 'What does your Quality Guarantee cover?' },
+      { page: 'quality-guarantee', section: 'faq_answer_1', content: 'Our Quality Guarantee covers all repair work we perform. If you\'re not satisfied with the repair quality, we\'ll work to make it right at no additional cost to you.' },
+      { page: 'quality-guarantee', section: 'faq_question_2', content: 'How long does your guarantee last?' },
+      { page: 'quality-guarantee', section: 'faq_answer_2', content: 'We provide a guarantee on our workmanship. The specific period depends on the type of repair performed. We\'ll discuss the guarantee terms with you when we complete your repair.' },
+      { page: 'quality-guarantee', section: 'faq_question_3', content: 'What if my scooter has the same problem again?' },
+      { page: 'quality-guarantee', section: 'faq_answer_3', content: 'If the same issue occurs within our guarantee period and it\'s related to our work, we\'ll fix it again at no charge. We stand by the quality of our repairs.' },
+      { page: 'quality-guarantee', section: 'faq_question_4', content: 'Do you guarantee parts as well as labor?' },
+      { page: 'quality-guarantee', section: 'faq_answer_4', content: 'Yes, we guarantee both our workmanship and the parts we install. If a part we installed fails prematurely, we\'ll replace it under our guarantee terms.' },
+      { page: 'quality-guarantee', section: 'faq_question_5', content: 'How do I make a guarantee claim?' },
+      { page: 'quality-guarantee', section: 'faq_answer_5', content: 'Simply contact us with your original repair details. We\'ll review your case and arrange to make things right. We keep detailed records of all our work to support our guarantee commitments.' },
+
 
     ])
     .execute();

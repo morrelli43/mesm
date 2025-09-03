@@ -65,3 +65,56 @@ export interface ApiResponse<T> {
   data?: T;
   error?: string;
 }
+
+// User profile data
+export interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  dateOfBirth?: string;
+  createdAt: string;
+}
+
+// User's scooter data
+export interface UserScooter {
+  id: string;
+  userId: string;
+  make: string;
+  model: string;
+  serialNumber?: string;
+  customMake?: string;
+  customModel?: string;
+  lastRepairDate?: string;
+  lastServiceDate?: string;
+  isServiceDue: boolean;
+  createdAt: string;
+}
+
+// Appointment data for users
+export interface UserAppointment {
+  id: string;
+  userId: string;
+  scooterId: string;
+  scooterInfo: {
+    make: string;
+    model: string;
+  };
+  serviceType: 'workshop' | 'mobile';
+  issueDescription: string;
+  status: 'upcoming' | 'completed' | 'cancelled';
+  scheduledDate: string;
+  scheduledTime: string;
+  location?: string;
+  technicianName?: string;
+  conversationHistory?: string[];
+  invoiceTotal?: number;
+  invoiceItems?: Array<{
+    description: string;
+    cost: number;
+  }>;
+  canEdit: boolean; // true if within 30 minutes of booking
+  createdAt: string;
+  completedAt?: string;
+}

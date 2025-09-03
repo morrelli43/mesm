@@ -1,0 +1,34 @@
+[
+  {
+    "id": "scooter1",
+    "userId": "user1",
+    "make": "Xiaomi",
+    "model": "Mi Electric Scooter Pro 2",
+    "serialNumber": "XM123456789",
+    "lastRepairDate": "2024-01-15",
+    "lastServiceDate": "2023-09-15",
+    "isServiceDue": true,
+    "createdAt": "2023-05-20T10:30:00Z"
+  },
+  {
+    "id": "scooter2",
+    "userId": "user1",
+    "make": "Segway",
+    "model": "Ninebot Max G30",
+    "serialNumber": "SG987654321",
+    "lastRepairDate": "2023-12-10",
+    "lastServiceDate": "2024-01-10",
+    "isServiceDue": false,
+    "createdAt": "2023-03-10T14:15:00Z"
+  },
+  {
+    "id": "scooter3",
+    "userId": "user1",
+    "make": "unknown",
+    "customMake": "Custom Brand",
+    "customModel": "Custom Model X1",
+    "lastServiceDate": "2023-11-20",
+    "isServiceDue": false,
+    "createdAt": "2023-08-05T16:45:00Z"
+  }
+]

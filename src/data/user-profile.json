@@ -1,0 +1,11 @@
+[
+  {
+    "id": "user1",
+    "name": "John Smith",
+    "email": "john.smith@example.com",
+    "phone": "+61 400 123 456",
+    "address": "123 Collins Street, Melbourne VIC 3000",
+    "dateOfBirth": "1985-06-15",
+    "createdAt": "2023-01-15T09:00:00Z"
+  }
+]

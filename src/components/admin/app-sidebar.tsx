@@ -123,7 +123,6 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const user = session?.user || {
     name: "Test User",
     email: "test@test.com",
-    avatar: "/avatars/test.jpg",
   };
 
   const handleLogout = async () => {
@@ -143,7 +142,7 @@ function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                 >
                   <Avatar className="h-8 w-8 rounded-lg">
-                    <AvatarImage src={user.avatar} alt={user.name} />
+                    {'avatar' in user && <AvatarImage src={user.avatar} alt={user.name} />}
                     <AvatarFallback className="rounded-lg">
                       {user.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>

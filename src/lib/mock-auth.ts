@@ -7,6 +7,7 @@ const MOCK_USER = {
   id: "test-user-id",
   email: "test@test.com",
   name: "Test User",
+  avatar: "/avatars/test.jpg",
 };
 
 // Simple in-memory session storage for demo

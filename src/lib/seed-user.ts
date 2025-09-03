@@ -97,6 +97,7 @@ async function createTestUser() {
 async function checkTables() {
   try {
     // Check if Better Auth tables exist
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const tableCheck = await db
       .selectFrom('information_schema.tables' as any)
       .where('table_schema', '=', 'public')

@@ -7,7 +7,8 @@ import { Progress } from "@/components/ui/progress";
 import { InitialInfoStep } from "./steps/initial-info-step";
 import { ScooterManufacturerStep } from "./steps/scooter-manufacturer-step";
 import { ScooterModelStep } from "./steps/scooter-model-step";
-import { ServiceRequirementsStep } from "./steps/service-requirements-step";
+import { ServiceIssuesStep } from "./steps/service-issues-step";
+import { RepairLocationStep } from "./steps/repair-location-step";
 import { PaymentStep } from "./steps/payment-step";
 import { ConfirmationStep } from "./steps/confirmation-step";
 import { SuccessStep } from "./steps/success-step";
@@ -26,17 +27,19 @@ interface BookingFormData {
   customManufacturer?: string;
   customModel?: string;
   
-  // Step 3: Service Requirements
+  // Step 4: Service Issues
   issueType: string;
   customDescription: string;
-  serviceType: "in-store" | "mobile";
+  selectedTyreOption?: string;
+  selectedBrakeOption?: string;
   
-  // Step 4: Scheduling
+  // Step 5: Repair Location
+  serviceType: "in-store" | "mobile";
   address?: string;
   preferredDate: string;
   preferredTime: string;
   
-  // Step 5: Account Creation
+  // Step 8: Account Creation
   createAccount: boolean;
 }
 
@@ -51,6 +54,8 @@ const initialFormData: BookingFormData = {
   customModel: "",
   issueType: "",
   customDescription: "",
+  selectedTyreOption: "",
+  selectedBrakeOption: "",
   serviceType: "in-store",
   address: "",
   preferredDate: "",
@@ -62,7 +67,7 @@ export function BookingForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<BookingFormData>(initialFormData);
   
-  const totalSteps = 7; // Updated: 1. Info, 2. Manufacturer, 3. Model, 4. Service, 5. Payment, 6. Confirmation, 7. Success
+  const totalSteps = 8; // Updated: 1. Info, 2. Manufacturer, 3. Model, 4. Issues, 5. Location, 6. Payment, 7. Confirmation, 8. Success
   const progress = (currentStep / totalSteps) * 100;
 
   const updateFormData = (updates: Partial<BookingFormData>) => {
@@ -72,7 +77,7 @@ export function BookingForm() {
   const goToNextStep = () => {
     // Skip model step if manufacturer is unknown
     if (currentStep === 2 && formData.manufacturer === "unknown") {
-      setCurrentStep(4); // Jump to service requirements
+      setCurrentStep(4); // Jump to service issues
     } else if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
     }
@@ -96,10 +101,11 @@ export function BookingForm() {
       case 1: return "Your Information";
       case 2: return "Your Scooter - Brand";
       case 3: return "Your Scooter - Model";
-      case 4: return "Service Requirements";
-      case 5: return "Payment";
-      case 6: return "Confirmation";
-      case 7: return "Success";
+      case 4: return "How Can We Help?";
+      case 5: return "Repair Location";
+      case 6: return "Payment";
+      case 7: return "Confirmation";
+      case 8: return "Success";
       default: return "";
     }
   };
@@ -107,7 +113,7 @@ export function BookingForm() {
   const canProceed = () => {
     switch (currentStep) {
       case 1:
-        return formData.firstName && formData.lastName && formData.email && formData.phone;
+        return formData.firstName && formData.lastName && formData.phone;
       case 2:
         return formData.manufacturer && (
           formData.manufacturer === "unknown" || 
@@ -118,13 +124,17 @@ export function BookingForm() {
         return formData.manufacturer === "unknown" || formData.model || 
                (formData.manufacturer === "custom" && formData.customModel);
       case 4:
-        return formData.issueType && formData.preferredDate && formData.preferredTime &&
-               (formData.serviceType === "in-store" || formData.address);
+        return formData.issueType && (
+          formData.issueType !== "It's Something Else" || formData.customDescription
+        );
       case 5:
-        return true; // Payment step
+        return formData.preferredDate && formData.preferredTime &&
+               (formData.serviceType === "in-store" || formData.address);
       case 6:
-        return true; // Confirmation step
+        return true; // Payment step
       case 7:
+        return true; // Confirmation step
+      case 8:
         return true; // Success step
       default:
         return false;
@@ -144,71 +154,78 @@ export function BookingForm() {
             <Progress value={progress} className="w-full" />
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="transition-all duration-300">
           {currentStep === 1 && (
-            <div className="space-y-4">
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
               <h3 className="text-lg font-semibold mb-4">Please provide your contact information</h3>
               <InitialInfoStep formData={formData} updateFormData={updateFormData} />
             </div>
           )}
           
           {currentStep === 2 && (
-            <div className="space-y-4">
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
               <ScooterManufacturerStep formData={formData} updateFormData={updateFormData} />
             </div>
           )}
           
           {currentStep === 3 && (
-            <div className="space-y-4">
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
               <ScooterModelStep formData={formData} updateFormData={updateFormData} />
             </div>
           )}
           
           {currentStep === 4 && (
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold mb-4">What service do you need?</h3>
-              <ServiceRequirementsStep formData={formData} updateFormData={updateFormData} />
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
+              <ServiceIssuesStep formData={formData} updateFormData={updateFormData} />
             </div>
           )}
           
           {currentStep === 5 && (
-            <div className="space-y-4">
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
+              <RepairLocationStep formData={formData} updateFormData={updateFormData} />
+            </div>
+          )}
+          
+          {currentStep === 6 && (
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
               <h3 className="text-lg font-semibold mb-4">Payment Information</h3>
               <PaymentStep formData={formData} updateFormData={updateFormData} />
             </div>
           )}
           
-          {currentStep === 6 && (
-            <div className="space-y-4">
+          {currentStep === 7 && (
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
               <ConfirmationStep 
                 formData={formData} 
                 updateFormData={updateFormData} 
                 onEdit={goToStep}
-                onComplete={() => setCurrentStep(7)}
+                onComplete={() => setCurrentStep(8)}
               />
             </div>
           )}
           
-          {currentStep === 7 && (
-            <div className="space-y-4">
+          {currentStep === 8 && (
+            <div className="space-y-4 animate-in slide-in-from-right-4 duration-300">
               <SuccessStep formData={formData} updateFormData={updateFormData} />
             </div>
           )}
           
-          {currentStep < 7 && (
+          {currentStep < 8 && (
             <div className="flex justify-between mt-8">
               <Button 
                 variant="outline" 
                 onClick={goToPreviousStep}
                 disabled={currentStep === 1}
+                className="transition-all duration-200 hover:scale-105"
               >
                 Previous
               </Button>
               <Button 
                 onClick={goToNextStep}
                 disabled={!canProceed()}
+                className="transition-all duration-200 hover:scale-105"
               >
-                {currentStep === 5 ? "Review Booking" : currentStep === 6 ? "Complete Booking" : "Next"}
+                {currentStep === 6 ? "Review Booking" : currentStep === 7 ? "Complete Booking" : "Next"}
               </Button>
             </div>
           )}

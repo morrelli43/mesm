@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { signIn, signUp } from "@/lib/auth-client";
+import { mockAuth } from "@/lib/mock-auth";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
@@ -17,29 +17,24 @@ export default function LoginPage() {
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
 
     try {
       if (isSignUp) {
-        await signUp.email({
-          email,
-          password,
-          name,
-        });
+        await mockAuth.signUp(email, password, name);
       } else {
-        await signIn.email({
-          email,
-          password,
-          rememberMe,
-        });
+        await mockAuth.signIn(email, password);
       }
       router.push("/admin");
     } catch (error) {
       console.error("Authentication error:", error);
+      setError("Authentication failed. Please try again or check server logs for database connection issues.");
     } finally {
       setIsLoading(false);
     }
@@ -47,10 +42,9 @@ export default function LoginPage() {
 
   const handleSocialAuth = async (provider: "google" | "apple" | "facebook") => {
     try {
-      await signIn.social({
-        provider,
-        callbackURL: "/admin",
-      });
+      // For demo purposes, just simulate social auth with test user
+      await mockAuth.signIn("test@test.com", "test");
+      router.push("/admin");
     } catch (error) {
       console.error("Social auth error:", error);
     }
@@ -141,6 +135,12 @@ export default function LoginPage() {
             </div>
 
             <form onSubmit={handleEmailAuth} className="space-y-4">
+              {error && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                  {error}
+                </div>
+              )}
+              
               {isSignUp && (
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>

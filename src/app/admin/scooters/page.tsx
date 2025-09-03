@@ -12,18 +12,18 @@ import { BookingForm } from "@/components/booking/booking-form";
 
 // Common scooter manufacturers from booking form
 const manufacturers = [
-  { name: "Xiaomi", logo: "🛴" },
-  { name: "Segway", logo: "🛴" },
-  { name: "Bird", logo: "🐦" },
-  { name: "Lime", logo: "🍋" },
-  { name: "Razor", logo: "⚡" },
-  { name: "Kaabo", logo: "🛴" },
-  { name: "Apollo", logo: "🚀" },
-  { name: "Dualtron", logo: "⚡" },
-  { name: "Zero", logo: "0️⃣" },
-  { name: "Ninebot", logo: "9️⃣" },
-  { name: "Unagi", logo: "🍱" },
-  { name: "Pure", logo: "💧" },
+  { name: "Xiaomi" },
+  { name: "Segway" },
+  { name: "Bird" },
+  { name: "Lime" },
+  { name: "Razor" },
+  { name: "Kaabo" },
+  { name: "Apollo" },
+  { name: "Dualtron" },
+  { name: "Zero" },
+  { name: "Ninebot" },
+  { name: "Unagi" },
+  { name: "Pure" },
 ];
 
 interface EditScooterModalProps {
@@ -69,10 +69,9 @@ function EditScooterModal({ scooter, onSave, onClose }: EditScooterModalProps) {
                 key={manufacturer.name}
                 variant={formData.make === manufacturer.name ? "default" : "outline"}
                 size="sm"
-                className="h-12 flex flex-col items-center text-xs"
+                className="h-12 flex items-center justify-center text-xs"
                 onClick={() => setFormData({ ...formData, make: manufacturer.name })}
               >
-                <span className="text-lg">{manufacturer.logo}</span>
                 <span>{manufacturer.name}</span>
               </Button>
             ))}
@@ -216,7 +215,7 @@ export default function UserScootersPage() {
 
   if (loading) {
     return (
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <div className="flex-1 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold tracking-tight">Your eScooters</h2>
         </div>
@@ -228,7 +227,7 @@ export default function UserScootersPage() {
   }
 
   return (
-    <div className="flex-1 space-y-4 p-8 pt-6">
+    <div className="flex-1 space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold tracking-tight">Your eScooters</h2>
       </div>

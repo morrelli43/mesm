@@ -4,11 +4,12 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   // Check if the request is for an admin route
   if (request.nextUrl.pathname.startsWith("/admin")) {
-    // Get the session token from cookies
-    const sessionToken = request.cookies.get("better-auth.session_token");
+    // For demo purposes, check if there's a mock session in the request headers
+    // In a real implementation, you'd validate the actual session token
+    const userCookie = request.cookies.get("mock-auth-user");
     
     // If no session token, redirect to login
-    if (!sessionToken) {
+    if (!userCookie) {
       const url = new URL("/login", request.url);
       url.searchParams.set("callbackUrl", request.nextUrl.pathname);
       return NextResponse.redirect(url);

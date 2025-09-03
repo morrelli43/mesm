@@ -1,10 +1,12 @@
-# Use Node.js LTS Alpine image
-FROM node:18-alpine AS base
+# Use a specific version of Node.js LTS Alpine image to improve security and reproducibility
+FROM node:20.12.2-alpine3.19 AS base
+
+RUN apk upgrade --no-cache
 
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat python3 make g++
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
@@ -52,7 +54,7 @@ USER nextjs
 
 EXPOSE 3000
 
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 CMD ["node", "server.js"]

@@ -41,14 +41,13 @@ export function InitialInfoStep({ formData, updateFormData }: InitialInfoStepPro
       </div>
       
       <div className="space-y-2">
-        <Label htmlFor="email">Email Address *</Label>
+        <Label htmlFor="email">Email Address</Label>
         <Input
           id="email"
           type="email"
-          placeholder="Enter your email address"
+          placeholder="Enter your email address (optional)"
           value={formData.email}
           onChange={(e) => updateFormData({ email: e.target.value })}
-          required
         />
       </div>
       
@@ -65,7 +64,7 @@ export function InitialInfoStep({ formData, updateFormData }: InitialInfoStepPro
       </div>
       
       <div className="text-sm text-muted-foreground">
-        * Required fields
+        Fields marked with * are required
       </div>
     </div>
   );

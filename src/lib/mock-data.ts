@@ -11,6 +11,8 @@ export const mockHomePageContent = {
   testimonial_1: '⭐️⭐️⭐️⭐️⭐️\n"Excellent service! Quick tyre replacement on the spot and friendly staff who explained everything clearly." – Sarah L.',
   testimonial_2: '⭐️⭐️⭐️⭐️⭐️\n"Tried other places before but these guys actually fixed the problem the same day. Highly recommend." – Daniel M.',
   testimonial_3: '⭐️⭐️⭐️⭐️⭐️\n"They kept me updated with photos and calls during the repair. Super professional and trustworthy." – Alex R.',
+  trust_badge_title: 'Our Quality Guarantee',
+  trust_badge_content: 'We stand by every repair we do. If you\'re not happy, we\'ll make it right. No hidden costs, no surprises — just honest, expert service from a team that cares about your ride.',
   final_cta_title: 'Ready to get back on the road?',
   final_cta_content: 'Booking with us takes less than 90 seconds. Just tell us what\'s wrong with your scooter, choose a time, and our team will handle the rest.'
 };

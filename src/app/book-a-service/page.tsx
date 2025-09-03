@@ -7,14 +7,16 @@ export const metadata: Metadata = {
 
 export default function BookAServicePage() {
     return (
-        <div className="container mx-auto py-10">
-            <div className="mb-8">
-                <h1 className="text-4xl font-bold mb-4">Book a Service</h1>
-                <p className="text-lg text-gray-600">
-                    This is the core service of the frontend site. It will be a booking form where users fill in information about their scooter location and requirements. The form will be split into 6 different sections/pages.
-                </p>
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-black">
+            <div className="container mx-auto py-10">
+                <div className="mb-8 text-center">
+                    <h1 className="text-4xl font-bold mb-4 text-white">Book a Service</h1>
+                    <p className="text-lg text-gray-300">
+                        This is the core service of the frontend site. It will be a booking form where users fill in information about their scooter location and requirements. The form will be split into 6 different sections/pages.
+                    </p>
+                </div>
+                <BookingForm />
             </div>
-            <BookingForm />
         </div>
     );
 }

@@ -3,26 +3,41 @@ import { Label } from "@/components/ui/label";
 
 interface InitialInfoStepProps {
   formData: {
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
     phone: string;
   };
-  updateFormData: (updates: Partial<{ name: string; email: string; phone: string }>) => void;
+  updateFormData: (updates: Partial<{ firstName: string; lastName: string; email: string; phone: string }>) => void;
 }
 
 export function InitialInfoStep({ formData, updateFormData }: InitialInfoStepProps) {
   return (
     <div className="space-y-6">
-      <div className="space-y-2">
-        <Label htmlFor="name">Full Name *</Label>
-        <Input
-          id="name"
-          type="text"
-          placeholder="Enter your full name"
-          value={formData.name}
-          onChange={(e) => updateFormData({ name: e.target.value })}
-          required
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor="firstName">First Name *</Label>
+          <Input
+            id="firstName"
+            type="text"
+            placeholder="Enter your first name"
+            value={formData.firstName}
+            onChange={(e) => updateFormData({ firstName: e.target.value })}
+            required
+          />
+        </div>
+        
+        <div className="space-y-2">
+          <Label htmlFor="lastName">Last Name *</Label>
+          <Input
+            id="lastName"
+            type="text"
+            placeholder="Enter your last name"
+            value={formData.lastName}
+            onChange={(e) => updateFormData({ lastName: e.target.value })}
+            required
+          />
+        </div>
       </div>
       
       <div className="space-y-2">

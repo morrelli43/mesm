@@ -42,7 +42,9 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { mockAuth, useSession } from "@/lib/mock-auth"
 
 // This would normally come from your auth context or API
 const user = {
@@ -114,18 +116,20 @@ function BookAppointmentModal() {
 }
 
 function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { data: session } = useSession();
+  const router = useRouter();
   const pathname = usePathname()
+  
+  const user = session?.user || {
+    name: "Test User",
+    email: "test@test.com",
+    avatar: "/avatars/test.jpg",
+  };
 
   const handleLogout = async () => {
-    try {
-      // Call the auth API to logout
-      await fetch('/api/auth/signout', { method: 'POST' })
-      // Redirect to home page
-      window.location.href = '/'
-    } catch (error) {
-      console.error('Logout error:', error)
-    }
-  }
+    await mockAuth.signOut();
+    router.push("/login");
+  };
 
   return (
     <Sidebar collapsible="icon" {...props}>

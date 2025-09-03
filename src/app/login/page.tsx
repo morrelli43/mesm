@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import { signIn, signUp } from "@/lib/auth-client";
+import { mockAuth } from "@/lib/mock-auth";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
@@ -25,17 +25,9 @@ export default function LoginPage() {
 
     try {
       if (isSignUp) {
-        await signUp.email({
-          email,
-          password,
-          name,
-        });
+        await mockAuth.signUp(email, password, name);
       } else {
-        await signIn.email({
-          email,
-          password,
-          rememberMe,
-        });
+        await mockAuth.signIn(email, password);
       }
       router.push("/admin");
     } catch (error) {
@@ -47,10 +39,9 @@ export default function LoginPage() {
 
   const handleSocialAuth = async (provider: "google" | "apple" | "facebook") => {
     try {
-      await signIn.social({
-        provider,
-        callbackURL: "/admin",
-      });
+      // For demo purposes, just simulate social auth with test user
+      await mockAuth.signIn("test@test.com", "test");
+      router.push("/admin");
     } catch (error) {
       console.error("Social auth error:", error);
     }

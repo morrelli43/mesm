@@ -5,6 +5,7 @@ import { IntroductoryCopy } from "@/components/introductory-copy";
 import { About } from "@/components/about";
 import { TrustCredibility } from "@/components/trust-credibility";
 import { Testimonials } from "@/components/testimonials";
+import { TrustBadge } from "@/components/trust-badge";
 import { FinalCta } from "@/components/final-cta";
 
 export const dynamic = 'force-dynamic';
@@ -54,6 +55,10 @@ export default async function Home() {
         testimonial1={content.testimonial_1}
         testimonial2={content.testimonial_2}
         testimonial3={content.testimonial_3}
+      />
+      <TrustBadge
+        title={content.trust_badge_title}
+        content={content.trust_badge_content}
       />
       <FinalCta
         title={content.final_cta_title}

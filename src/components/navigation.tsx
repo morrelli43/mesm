@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { useSession } from "@/lib/auth-client";
 
 export function Navigation() {
+  const { data: session } = useSession();
+
   return (
     <header className="px-4 lg:px-6 h-14 flex items-center">
       <Link className="flex items-center justify-center" href="/">
@@ -39,11 +44,26 @@ export function Navigation() {
         >
           Contact Us
         </Link>
-        <Button asChild>
-          <Link href="/book-a-service">
-            Book a Service
-          </Link>
-        </Button>
+        {session ? (
+          <Button asChild>
+            <Link href="/admin">
+              Dashboard
+            </Link>
+          </Button>
+        ) : (
+          <>
+            <Button asChild variant="outline">
+              <Link href="/login">
+                Login
+              </Link>
+            </Button>
+            <Button asChild>
+              <Link href="/book-a-service">
+                Book a Service
+              </Link>
+            </Button>
+          </>
+        )}
       </nav>
     </header>
   );

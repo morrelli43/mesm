@@ -84,9 +84,9 @@ async function createTestUser() {
       })
       .execute();
     
-    console.log('✅ Test user created successfully!');
-    console.log('📧 Email: test@test.com');
-    console.log('🔑 Password: test');
+    console.log('✓ Test user created successfully!');
+    console.log('Email: test@test.com');
+    console.log('Password: test');
     
   } catch (error) {
     console.error('Error creating test user:', error);
@@ -108,7 +108,7 @@ async function checkTables() {
     console.log('Found tables:', tableCheck.map(t => t.table_name));
     
     if (tableCheck.length === 0) {
-      console.log('⚠️ Better Auth tables not found. Please start the application first to initialize the database.');
+      console.log('⚠ Better Auth tables not found. Please start the application first to initialize the database.');
       return false;
     }
     
@@ -121,19 +121,19 @@ async function checkTables() {
 
 async function main() {
   try {
-    console.log('🔍 Checking database connection and tables...');
+    console.log('✓ Checking database connection and tables...');
     
     const tablesExist = await checkTables();
     if (!tablesExist) {
-      console.log('❌ Database tables not ready. Please run the application first.');
+      console.log('✗ Database tables not ready. Please run the application first.');
       process.exit(1);
     }
     
     await createTestUser();
-    console.log('✅ User seeding complete!');
+    console.log('✓ User seeding complete!');
     
   } catch (error) {
-    console.error('❌ Error during user seeding:', error);
+    console.error('✗ Error during user seeding:', error);
     process.exit(1);
   } finally {
     await db.destroy();

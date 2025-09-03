@@ -98,7 +98,7 @@ async function checkTables() {
   try {
     // Check if Better Auth tables exist
     const tableCheck = await db
-      .selectFrom('information_schema.tables')
+      .selectFrom('information_schema.tables' as any)
       .where('table_schema', '=', 'public')
       .where('table_name', 'in', ['user', 'password', 'session', 'account'])
       .select(['table_name'])

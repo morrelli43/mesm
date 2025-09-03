@@ -1,0 +1,116 @@
+[
+  {
+    "id": "apt1",
+    "userId": "user1",
+    "scooterId": "scooter1",
+    "scooterInfo": {
+      "make": "Xiaomi",
+      "model": "Mi Electric Scooter Pro 2"
+    },
+    "serviceType": "workshop",
+    "issueDescription": "Battery not holding charge properly",
+    "status": "upcoming",
+    "scheduledDate": "2024-12-23",
+    "scheduledTime": "10:00",
+    "location": "Melbourne Workshop - 456 Flinders Street",
+    "canEdit": true,
+    "createdAt": "2024-12-22T09:00:00Z"
+  },
+  {
+    "id": "apt2",
+    "userId": "user1",
+    "scooterId": "scooter2",
+    "scooterInfo": {
+      "make": "Segway",
+      "model": "Ninebot Max G30"
+    },
+    "serviceType": "mobile",
+    "issueDescription": "Brake adjustment needed",
+    "status": "upcoming",
+    "scheduledDate": "2024-12-24",
+    "scheduledTime": "14:30",
+    "location": "123 Collins Street, Melbourne VIC 3000",
+    "canEdit": false,
+    "createdAt": "2024-12-20T15:30:00Z"
+  },
+  {
+    "id": "apt3",
+    "userId": "user1",
+    "scooterId": "scooter1",
+    "scooterInfo": {
+      "make": "Xiaomi",
+      "model": "Mi Electric Scooter Pro 2"
+    },
+    "serviceType": "workshop",
+    "issueDescription": "General service and tire replacement",
+    "status": "completed",
+    "scheduledDate": "2024-01-15",
+    "scheduledTime": "11:00",
+    "location": "Melbourne Workshop - 456 Flinders Street",
+    "technicianName": "Mike Johnson",
+    "conversationHistory": [
+      "Initial inspection completed",
+      "Front tire needs replacement",
+      "Battery tested - working fine",
+      "Service completed successfully"
+    ],
+    "invoiceTotal": 85.50,
+    "invoiceItems": [
+      {
+        "description": "Front tire replacement",
+        "cost": 45.00
+      },
+      {
+        "description": "General service",
+        "cost": 35.00
+      },
+      {
+        "description": "Labor",
+        "cost": 5.50
+      }
+    ],
+    "canEdit": false,
+    "createdAt": "2024-01-10T08:00:00Z",
+    "completedAt": "2024-01-15T12:30:00Z"
+  },
+  {
+    "id": "apt4",
+    "userId": "user1",
+    "scooterId": "scooter2",
+    "scooterInfo": {
+      "make": "Segway",
+      "model": "Ninebot Max G30"
+    },
+    "serviceType": "mobile",
+    "issueDescription": "Throttle not responding",
+    "status": "completed",
+    "scheduledDate": "2023-12-10",
+    "scheduledTime": "09:30",
+    "location": "123 Collins Street, Melbourne VIC 3000",
+    "technicianName": "Sarah Wilson",
+    "conversationHistory": [
+      "Throttle mechanism inspected",
+      "Issue found in wiring connection",
+      "Wiring repaired and tested",
+      "All systems working correctly"
+    ],
+    "invoiceTotal": 65.00,
+    "invoiceItems": [
+      {
+        "description": "Throttle wire repair",
+        "cost": 25.00
+      },
+      {
+        "description": "Diagnostic fee",
+        "cost": 20.00
+      },
+      {
+        "description": "Mobile service fee",
+        "cost": 20.00
+      }
+    ],
+    "canEdit": false,
+    "createdAt": "2023-12-05T10:15:00Z",
+    "completedAt": "2023-12-10T10:45:00Z"
+  }
+]

@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Wrench, Zap, Disc, HelpCircle, Circle } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Wrench, Zap, Disc, HelpCircle, Circle, MapPin, DollarSign } from "lucide-react";
 import { useState } from "react";
 
 interface ServiceRequirementsStepProps {
@@ -174,9 +175,47 @@ export function ServiceRequirementsStep({ formData, updateFormData }: ServiceReq
                 <h5 className="font-medium">In-Store Service</h5>
                 <p className="text-sm text-muted-foreground">Bring your scooter to our shop</p>
                 <p className="text-sm font-medium">Booking fee: $35</p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Our workshop is in Heidelberg, click here for more info
-                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="text-xs text-primary underline mt-2 hover:text-primary/80">
+                      Our workshop is in Heidelberg, click here for more info
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-md">
+                    <DialogHeader>
+                      <DialogTitle>Workshop Information</DialogTitle>
+                      <DialogDescription>
+                        Visit our workshop in Heidelberg for in-store service
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-4 w-4 text-primary mt-1" />
+                        <div>
+                          <p className="font-medium">Melbourne eScooter Mechanic</p>
+                          <p className="text-sm text-muted-foreground">
+                            Shop 3, 101 Burgundy Street<br/>
+                            Heidelberg, 3084, Victoria
+                          </p>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <p className="font-medium">Opening Hours:</p>
+                        <div className="text-sm text-muted-foreground space-y-1">
+                          <p>Mon, Tues, Thurs, Fri: 9am-5pm</p>
+                          <p>Saturday: 10am-4pm</p>
+                          <p>Wednesday & Sunday: Closed</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 p-3 bg-amber-50 rounded-lg border border-amber-200">
+                        <DollarSign className="h-4 w-4 text-amber-600" />
+                        <p className="text-sm text-amber-800">
+                          <strong>Booking fee of $35 is required</strong>
+                        </p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </CardContent>
           </Card>
@@ -192,9 +231,63 @@ export function ServiceRequirementsStep({ formData, updateFormData }: ServiceReq
                 <h5 className="font-medium">Mobile Service</h5>
                 <p className="text-sm text-muted-foreground">We come to your location</p>
                 <p className="text-sm font-medium">Minimum callout charge: $50</p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  View suburb pricing for accurate quote
-                </p>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="text-xs text-primary underline mt-2 hover:text-primary/80">
+                      View suburb pricing for accurate quote
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle>Greater Melbourne Suburbs - Mobile Service Pricing</DialogTitle>
+                      <DialogDescription>
+                        Pricing varies by distance from our Heidelberg workshop
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <h4 className="font-medium mb-2 text-green-700">Zone 1 - $50</h4>
+                          <div className="text-sm space-y-1 text-muted-foreground">
+                            <p>Heidelberg, Ivanhoe, Fairfield</p>
+                            <p>Northcote, Thornbury, Preston</p>
+                            <p>Brunswick, Coburg, Pascoe Vale</p>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-medium mb-2 text-blue-700">Zone 2 - $70</h4>
+                          <div className="text-sm space-y-1 text-muted-foreground">
+                            <p>Carlton, Fitzroy, Collingwood</p>
+                            <p>Richmond, South Yarra, Prahran</p>
+                            <p>Essendon, Moonee Ponds</p>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-medium mb-2 text-orange-700">Zone 3 - $90</h4>
+                          <div className="text-sm space-y-1 text-muted-foreground">
+                            <p>Melbourne CBD, Docklands</p>
+                            <p>St Kilda, Brighton, Caulfield</p>
+                            <p>Footscray, Williamstown</p>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="font-medium mb-2 text-red-700">Zone 4 - $120</h4>
+                          <div className="text-sm space-y-1 text-muted-foreground">
+                            <p>Frankston, Dandenong</p>
+                            <p>Box Hill, Ringwood</p>
+                            <p>Sunbury, Melton</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                        <p className="text-sm text-blue-800">
+                          <strong>Note:</strong> Final pricing may vary based on exact location and accessibility. 
+                          Our technician will confirm the final price before commencing work.
+                        </p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </CardContent>
           </Card>

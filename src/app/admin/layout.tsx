@@ -1,14 +1,9 @@
-import { Header } from "@/components/admin/header";
+import AdminLayoutWrapper from "@/components/admin/app-sidebar";
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <Header />
-      <main className="flex-1 overflow-hidden pt-16">{children}</main>
-    </>
-  );
+  return <AdminLayoutWrapper>{children}</AdminLayoutWrapper>;
 }

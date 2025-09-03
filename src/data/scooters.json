@@ -9,6 +9,12 @@
     "originalPrice": 799.00,
     "description": "Fully refurbished with new battery. 45km range, LED display, and app connectivity.",
     "features": ["New battery", "LED display", "App connectivity", "25km/h max speed"],
+    "specs": {
+      "topSpeed": "25 km/h",
+      "range": "45 km",
+      "weight": "14.2 kg"
+    },
+    "images": ["/scooters/xiaomi-pro2.jpg", "/scooters/xiaomi-pro2-2.jpg"],
     "imageUrl": "/scooters/xiaomi-pro2.jpg",
     "inStock": true,
     "mileage": 245,
@@ -25,6 +31,12 @@
     "originalPrice": 999.00,
     "description": "Long-range scooter with 65km range. Recently serviced with performance upgrades.",
     "features": ["65km range", "350W motor", "Pneumatic tires", "Bluetooth"],
+    "specs": {
+      "topSpeed": "30 km/h",
+      "range": "65 km",
+      "weight": "18.7 kg"
+    },
+    "images": ["/scooters/segway-max.jpg", "/scooters/segway-max-2.jpg", "/scooters/segway-max-3.jpg"],
     "imageUrl": "/scooters/segway-max.jpg",
     "inStock": true,
     "mileage": 456,
@@ -41,6 +53,12 @@
     "originalPrice": 1699.00,
     "description": "High-performance dual motor scooter. Perfect for hills and long commutes.",
     "features": ["Dual 800W motors", "Hydraulic brakes", "60km range", "Off-road capable"],
+    "specs": {
+      "topSpeed": "65 km/h",
+      "range": "60 km",
+      "weight": "24.5 kg"
+    },
+    "images": ["/scooters/kaabo-mantis.jpg", "/scooters/kaabo-mantis-2.jpg"],
     "imageUrl": "/scooters/kaabo-mantis.jpg", 
     "inStock": false,
     "mileage": 789,

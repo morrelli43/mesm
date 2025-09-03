@@ -1,5 +1,7 @@
-# Use Node.js LTS Alpine image
-FROM node:20-alpine AS base
+# Use a specific version of Node.js LTS Alpine image to improve security and reproducibility
+FROM node:20.12.2-alpine3.19 AS base
+
+RUN apk upgrade --no-cache
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -52,7 +54,7 @@ USER nextjs
 
 EXPOSE 3000
 
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
 
 CMD ["node", "server.js"]

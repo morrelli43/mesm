@@ -5,7 +5,15 @@ export const metadata: Metadata = {
     title: "Book a Service",
 };
 
-export default function BookAServicePage() {
+interface BookAServicePageProps {
+    searchParams: Promise<{ step?: string }>;
+}
+
+export default async function BookAServicePage({ searchParams }: BookAServicePageProps) {
+    const params = await searchParams;
+    const initialStep = params.step ? parseInt(params.step, 10) : 1;
+    const validStep = isNaN(initialStep) || initialStep < 1 || initialStep > 8 ? 1 : initialStep;
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-black">
             <div className="container mx-auto py-10">
@@ -15,7 +23,7 @@ export default function BookAServicePage() {
                         This is the core service of the frontend site. It will be a booking form where users fill in information about their scooter location and requirements. The form will be split into 6 different sections/pages.
                     </p>
                 </div>
-                <BookingForm />
+                <BookingForm initialStep={validStep} />
             </div>
         </div>
     );

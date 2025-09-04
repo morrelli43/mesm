@@ -63,8 +63,12 @@ const initialFormData: BookingFormData = {
   createAccount: false,
 };
 
-export function BookingForm() {
-  const [currentStep, setCurrentStep] = useState(1);
+interface BookingFormProps {
+  initialStep?: number;
+}
+
+export function BookingForm({ initialStep = 1 }: BookingFormProps) {
+  const [currentStep, setCurrentStep] = useState(initialStep);
   const [formData, setFormData] = useState<BookingFormData>(initialFormData);
   
   const totalSteps = 8; // Updated: 1. Info, 2. Manufacturer, 3. Model, 4. Issues, 5. Location, 6. Payment, 7. Confirmation, 8. Success

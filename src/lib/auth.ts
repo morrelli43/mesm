@@ -4,7 +4,7 @@ import { nextCookies } from "better-auth/next-js";
 export const auth = betterAuth({
   database: {
     provider: "sqlite",
-    url: "./dev.db",
+    url: ":memory:",
   },
   secret: process.env.BETTER_AUTH_SECRET || "fallback-secret-for-development-only",
   emailAndPassword: {
@@ -29,6 +29,7 @@ export const auth = betterAuth({
     expiresIn: 60 * 60 * 24 * 7, // 7 days
     updateAge: 60 * 60 * 24, // 24 hours
   },
+  trustedOrigins: ["http://localhost:3000"],
 });
 
 export type Session = typeof auth.$Infer.Session;

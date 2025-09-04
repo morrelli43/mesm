@@ -133,7 +133,7 @@ export function PaymentStep({ formData }: PaymentStepProps) {
             </TabsList>
 
             <TabsContent value="card" className="space-y-4 mt-6">
-              <div className="space-y-2">
+              <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="card-number">Card Number</Label>
                 <Input
                   id="card-number"
@@ -144,7 +144,7 @@ export function PaymentStep({ formData }: PaymentStepProps) {
               </div>
               
               <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+                <div className="grid w-full items-center gap-1.5">
                   <Label htmlFor="expiry">Expiry Date</Label>
                   <Input
                     id="expiry"
@@ -153,7 +153,7 @@ export function PaymentStep({ formData }: PaymentStepProps) {
                     maxLength={5}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="grid w-full items-center gap-1.5">
                   <Label htmlFor="cvv">CVV</Label>
                   <Input
                     id="cvv"
@@ -164,7 +164,7 @@ export function PaymentStep({ formData }: PaymentStepProps) {
                 </div>
               </div>
               
-              <div className="space-y-2">
+              <div className="grid w-full items-center gap-1.5">
                 <Label htmlFor="cardholder-name">Cardholder Name</Label>
                 <Input
                   id="cardholder-name"

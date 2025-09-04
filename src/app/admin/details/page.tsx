@@ -59,24 +59,26 @@ export default function UserDetailsPage() {
     return (
       <div key={field} className="flex items-center space-x-2 p-4 border rounded-lg">
         <div className="flex-1">
-          <Label htmlFor={field} className="text-sm font-medium text-gray-600">
-            {label}
-          </Label>
-          {isEditing ? (
+          <div className="grid w-full max-w-sm items-center gap-3">
+            <Label htmlFor={field}>{label}</Label>
             <Input
               id={field}
               value={editValues[field] || ''}
               onChange={(e) => setEditValues({ ...editValues, [field]: e.target.value })}
               className="mt-1"
             />
+          </div>
           ) : (
+          <div className="grid w-full max-w-sm items-center gap-3">
+            <Label htmlFor={field}>{label}</Label>
             <Input
               id={field}
               value={value || ''}
               disabled
               className="mt-1 bg-gray-50"
             />
-          )}
+          </div>
+          )
         </div>
         
         {isEditing ? (

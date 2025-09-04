@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { 
   Calendar, 
   Clock, 
   MapPin, 
-  User, 
   Edit2, 
   MessageCircle, 
   X,
@@ -334,51 +334,63 @@ export default function AppointmentsPage() {
               </CardContent>
             </Card>
           ) : (
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {previousAppointments.map((appointment) => (
-                <Dialog key={appointment.id}>
-                  <DialogTrigger asChild>
-                    <Card className="cursor-pointer hover:bg-gray-50 transition-colors">
-                      <CardContent className="p-4">
-                        <div className="space-y-3">
-                          <div className="flex items-center space-x-2">
-                            <FileText className="h-8 w-8 text-gray-400" />
-                            <div className="flex-1">
-                              <p className="font-medium text-sm">
+            <Card>
+              <CardContent className="p-0">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-24">Cost</TableHead>
+                      <TableHead>Issue</TableHead>
+                      <TableHead>Date</TableHead>
+                      <TableHead>Scooter</TableHead>
+                      <TableHead className="w-20"></TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {previousAppointments
+                      .sort((a, b) => new Date(b.scheduledDate).getTime() - new Date(a.scheduledDate).getTime())
+                      .map((appointment) => (
+                        <TableRow key={appointment.id}>
+                          <TableCell className="font-medium">
+                            ${appointment.invoiceTotal?.toFixed(2) || '0.00'}
+                          </TableCell>
+                          <TableCell className="max-w-xs">
+                            <div className="truncate">{appointment.issueDescription}</div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex flex-col">
+                              <span className="text-sm">{formatDate(appointment.scheduledDate)}</span>
+                              <span className="text-xs text-gray-500">{formatTime(appointment.scheduledTime)}</span>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex flex-col">
+                              <span className="text-sm font-medium">
                                 {appointment.scooterInfo.make} {appointment.scooterInfo.model}
-                              </p>
-                              <p className="text-xs text-gray-600">
-                                {formatDate(appointment.scheduledDate)} at {formatTime(appointment.scheduledTime)}
-                              </p>
+                              </span>
+                              {appointment.technicianName && (
+                                <span className="text-xs text-gray-500">
+                                  By {appointment.technicianName}
+                                </span>
+                              )}
                             </div>
-                          </div>
-                          
-                          <div className="text-xs text-gray-600">
-                            <p className="truncate">{appointment.issueDescription}</p>
-                          </div>
-                          
-                          {appointment.technicianName && (
-                            <div className="flex items-center text-xs text-gray-600">
-                              <User className="h-3 w-3 mr-1" />
-                              {appointment.technicianName}
-                            </div>
-                          )}
-                          
-                          {appointment.invoiceTotal && (
-                            <div className="text-xs font-medium">
-                              Total: ${appointment.invoiceTotal.toFixed(2)}
-                            </div>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </DialogTrigger>
-                  <AppointmentDetailModal
-                    appointment={appointment}
-                  />
-                </Dialog>
-              ))}
-            </div>
+                          </TableCell>
+                          <TableCell>
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button variant="ghost" size="sm">
+                                  <FileText className="h-4 w-4" />
+                                </Button>
+                              </DialogTrigger>
+                              <AppointmentDetailModal appointment={appointment} />
+                            </Dialog>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                  </TableBody>
+                </Table>
+              </CardContent>
+            </Card>
           )}
         </TabsContent>
       </Tabs>

@@ -75,7 +75,7 @@ export function ScooterManufacturerStep({ formData, updateFormData }: ScooterMan
 
       {formData.manufacturer === "custom" && (
         <div className="space-y-4 p-4 border rounded-lg bg-muted/50">
-          <div className="space-y-2">
+          <div className="grid w-full items-center gap-1.5">
             <Label htmlFor="custom-manufacturer">Manufacturer/Brand</Label>
             <Input
               id="custom-manufacturer"
@@ -85,7 +85,7 @@ export function ScooterManufacturerStep({ formData, updateFormData }: ScooterMan
               onChange={(e) => updateFormData({ customManufacturer: e.target.value })}
             />
           </div>
-          <div className="space-y-2">
+          <div className="grid w-full items-center gap-1.5">
             <Label htmlFor="custom-model">Model</Label>
             <Input
               id="custom-model"
